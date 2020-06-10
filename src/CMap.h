@@ -1,4 +1,5 @@
 #include "CEnemy.h"
+//#include "CRoute.h"
 #include <string>
 #ifndef TOWERDEFENCE_MAP_H
 #define TOWERDEFENCE_MAP_H
@@ -11,15 +12,17 @@ public:
     int m_Height;
     char ** m_Field;
 
-    int m_StartX;
-    int m_StartY;
-    int m_FinishX;
-    int m_FinishY;
+    CCoords m_Start{};
+    CCoords m_Finish{};
 
     int m_MaxEnemiesCount;
-    int m_EnemyCount = 0;
+    int m_EnemyCount;
     CEnemy ** m_Enemies;
+    CCoords * m_Way;
+    int m_WayLength;
 
+    CMap();
+    void MoveEnemies() const;
     bool LoadMap(const string& path);
     void CompileEnemies() const;
     void AddEnemy(CEnemy &enemy);

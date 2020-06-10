@@ -3,6 +3,4 @@
 
 using namespace std;
 
-void CEnemy::ToMap() {
 
-}

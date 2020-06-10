@@ -1,28 +1,34 @@
 #include <iostream>
 #include <unistd.h>
 #include "CMap.h"
-#include "CEnemy.h"
+#include "CRoute.h"
 
 using namespace std;
 
-CMap map;
+CMap * map;
+
 
 void Setup()
 {
-    auto * enemy = new CEnemy();
-    map.LoadMap("templates/maps/map01.txt");
-    enemy->m_PosX = 3;
-    enemy->m_PosY = 3;
-    enemy->m_Mark = '@';
-    map.AddEnemy(*enemy);
-    map.CompileEnemies();
+    map = new CMap();
+    map->LoadMap("templates/maps/map01.txt");
+    map->CompileEnemies();
+    CRoute route(*map);
+    map->m_Way = route.GetWay(map->m_WayLength);
+
+//    for (int i = 0; i < map->m_WayLength; i++){
+//        cout << map->m_Way[i].y << ", " << map->m_Way[i].x << endl;
+//    }
+
+//    route.Print();
+//    delete enemy;
 }
 
 void Draw()
 {
     system("clear");
 
-    map.Print();
+    map->Print();
 }
 
 void Input()
@@ -32,7 +38,12 @@ void Input()
 
 void Logic()
 {
+    map->MoveEnemies();
+    auto * enemy = new CEnemy();
+    enemy->m_Mark = '@';
+    map->AddEnemy(*enemy);
 
+    map->CompileEnemies();
 }
 
 int main() {
@@ -43,7 +54,7 @@ int main() {
         Draw();
         Input();
         Logic();
-        usleep(10000);
+        usleep(100000);
     }
 
 

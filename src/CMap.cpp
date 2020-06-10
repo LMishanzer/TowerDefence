@@ -1,9 +1,20 @@
 #include "CMap.h"
 #include <iostream>
 #include <fstream>
-#include <utility>
 
 using namespace std;
+
+CMap::CMap() {
+    m_Width = 0;
+    m_Height = 0;
+    m_Field = nullptr;
+
+    m_MaxEnemiesCount = 0;
+    m_EnemyCount = 0;
+    m_Enemies = nullptr;
+    m_Way = nullptr;
+    m_WayLength = 0;
+}
 
 void CMap::Print() const {
     for (int i = 0; i < m_Height; i++) {
@@ -20,10 +31,10 @@ bool CMap::LoadMap(const string& path) {
 
     file >> m_Height;
     file >> m_Width;
-    file >> m_StartY;
-    file >> m_StartX;
-    file >> m_FinishY;
-    file >> m_FinishX;
+    file >> m_Start.y;
+    file >> m_Start.x;
+    file >> m_Finish.y;
+    file >> m_Finish.x;
     file >> m_MaxEnemiesCount;
 
     file.get();
@@ -44,7 +55,7 @@ bool CMap::LoadMap(const string& path) {
 
 void CMap::CompileEnemies() const {
     for (int i = 0; i < m_EnemyCount; i++) {
-        m_Field[m_Enemies[i]->m_PosY][m_Enemies[i]->m_PosX] = m_Enemies[i]->m_Mark;
+        m_Field[m_Enemies[i]->m_Pos.y][m_Enemies[i]->m_Pos.x] = m_Enemies[i]->m_Mark;
     }
 }
 
@@ -52,7 +63,16 @@ void CMap::AddEnemy(CEnemy &enemy) {
     if (m_EnemyCount == m_MaxEnemiesCount)
         return;
     m_Enemies[m_EnemyCount] = &enemy;
+    enemy.m_Iteration = 0;
+    enemy.m_Pos = m_Start;
     m_EnemyCount++;
+}
+
+void CMap::MoveEnemies() const {
+    for (int i = 0; i < m_EnemyCount; i++){
+        m_Enemies[i]->m_Iteration++;
+        m_Enemies[i]->m_Pos = m_Way[m_Enemies[i]->m_Iteration];
+    }
 }
 
 CMap::~CMap() {
@@ -62,7 +82,7 @@ CMap::~CMap() {
     }
     delete [] m_Field;
 
-    for (CEnemy * i = *m_Enemies; i != nullptr; i++)
-        delete i;
+//    for (CEnemy * i = *m_Enemies; i != nullptr; i++)
+//        delete i;
     delete [] m_Enemies;
 }
