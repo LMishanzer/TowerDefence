@@ -20,13 +20,15 @@ public:
     CEnemy ** m_Enemies;
     CCoords * m_Way;
     int m_WayLength;
+    int m_PassedEnemies;
 
     CMap();
-    void MoveEnemies() const;
+    void MoveEnemies();
     bool LoadMap(const string& path);
     void CompileEnemies() const;
-    void AddEnemy(CEnemy &enemy);
+    void AddEnemy(CEnemy * enemy);
     void Print() const;
+    bool IsOver() const;
 
     ~CMap();
 };

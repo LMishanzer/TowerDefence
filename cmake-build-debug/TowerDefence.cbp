@@ -82,10 +82,22 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/mike/PA2/TowerDefence/src/CEnemiesGenerator.cpp">
+			<Option target="TowerDefence"/>
+		</Unit>
+		<Unit filename="/home/mike/PA2/TowerDefence/src/CEnemiesGenerator.h">
+			<Option target="TowerDefence"/>
+		</Unit>
 		<Unit filename="/home/mike/PA2/TowerDefence/src/CEnemy.cpp">
 			<Option target="TowerDefence"/>
 		</Unit>
 		<Unit filename="/home/mike/PA2/TowerDefence/src/CEnemy.h">
+			<Option target="TowerDefence"/>
+		</Unit>
+		<Unit filename="/home/mike/PA2/TowerDefence/src/CLevel.cpp">
+			<Option target="TowerDefence"/>
+		</Unit>
+		<Unit filename="/home/mike/PA2/TowerDefence/src/CLevel.h">
 			<Option target="TowerDefence"/>
 		</Unit>
 		<Unit filename="/home/mike/PA2/TowerDefence/src/CMap.cpp">
@@ -98,6 +110,9 @@
 			<Option target="TowerDefence"/>
 		</Unit>
 		<Unit filename="/home/mike/PA2/TowerDefence/src/CRoute.h">
+			<Option target="TowerDefence"/>
+		</Unit>
+		<Unit filename="/home/mike/PA2/TowerDefence/src/GameOver.cpp">
 			<Option target="TowerDefence"/>
 		</Unit>
 		<Unit filename="/home/mike/PA2/TowerDefence/src/main.cpp">

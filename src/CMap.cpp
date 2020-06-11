@@ -14,6 +14,7 @@ CMap::CMap() {
     m_Enemies = nullptr;
     m_Way = nullptr;
     m_WayLength = 0;
+    m_PassedEnemies = 0;
 }
 
 void CMap::Print() const {
@@ -23,6 +24,7 @@ void CMap::Print() const {
         }
         cout << endl;
     }
+    cout << "Passed enemies: " << m_PassedEnemies << endl;
 }
 
 bool CMap::LoadMap(const string& path) {
@@ -40,6 +42,10 @@ bool CMap::LoadMap(const string& path) {
     file.get();
 
     m_Enemies = new CEnemy*[m_MaxEnemiesCount];
+    for (int i = 0; i < m_MaxEnemiesCount; i++){
+        m_Enemies[i] = nullptr;
+    }
+
     m_Field = new char*[m_Height];
     for (int i = 0; i < m_Height; i++) {
         m_Field[i] = new char[m_Width];
@@ -54,24 +60,44 @@ bool CMap::LoadMap(const string& path) {
 }
 
 void CMap::CompileEnemies() const {
-    for (int i = 0; i < m_EnemyCount; i++) {
-        m_Field[m_Enemies[i]->m_Pos.y][m_Enemies[i]->m_Pos.x] = m_Enemies[i]->m_Mark;
+    for (int i = 0; i < m_Height; i++){
+        for (int j = 0; j < m_Width; j++){
+            if (m_Field[i][j] == '@'){
+                m_Field[i][j] = ' ';
+            }
+        }
+    }
+
+    for (int i = 0; i < m_MaxEnemiesCount; i++) {
+        if (m_Enemies[i])
+            m_Field[m_Enemies[i]->m_Pos.y][m_Enemies[i]->m_Pos.x] = m_Enemies[i]->m_Mark;
     }
 }
 
-void CMap::AddEnemy(CEnemy &enemy) {
-    if (m_EnemyCount == m_MaxEnemiesCount)
+void CMap::AddEnemy(CEnemy *enemy) {
+    if (m_EnemyCount == m_MaxEnemiesCount || enemy == nullptr)
         return;
-    m_Enemies[m_EnemyCount] = &enemy;
-    enemy.m_Iteration = 0;
-    enemy.m_Pos = m_Start;
+    m_Enemies[m_EnemyCount] = enemy;
+    enemy->m_Iteration = 0;
+    enemy->m_Pos = m_Start;
     m_EnemyCount++;
+    if (m_EnemyCount == m_MaxEnemiesCount)
+        m_EnemyCount = 0;
 }
 
-void CMap::MoveEnemies() const {
-    for (int i = 0; i < m_EnemyCount; i++){
-        m_Enemies[i]->m_Iteration++;
-        m_Enemies[i]->m_Pos = m_Way[m_Enemies[i]->m_Iteration];
+void CMap::MoveEnemies() {
+    for (int i = 0; i < m_MaxEnemiesCount; i++) {
+        if (m_Enemies[i]) {
+            if (m_Enemies[i]->m_Pos == m_Finish) {
+                delete m_Enemies[i];
+                m_Enemies[i] = nullptr;
+                m_PassedEnemies++;
+            }
+            else {
+                m_Enemies[i]->m_Iteration++;
+                m_Enemies[i]->m_Pos = m_Way[m_Enemies[i]->m_Iteration];
+            }
+        }
     }
 }
 
@@ -82,7 +108,14 @@ CMap::~CMap() {
     }
     delete [] m_Field;
 
-//    for (CEnemy * i = *m_Enemies; i != nullptr; i++)
-//        delete i;
+    for (int i = 0; i < m_MaxEnemiesCount; i++)
+        if (m_Enemies[i]){
+            delete m_Enemies[i];
+        }
     delete [] m_Enemies;
+    delete [] m_Way;
+}
+
+bool CMap::IsOver() const {
+    return m_PassedEnemies == 7;
 }

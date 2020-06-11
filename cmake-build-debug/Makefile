@@ -123,6 +123,33 @@ TowerDefence/fast:
 	$(MAKE) -f CMakeFiles/TowerDefence.dir/build.make CMakeFiles/TowerDefence.dir/build
 .PHONY : TowerDefence/fast
 
+src/CEnemiesGenerator.o: src/CEnemiesGenerator.cpp.o
+
+.PHONY : src/CEnemiesGenerator.o
+
+# target to build an object file
+src/CEnemiesGenerator.cpp.o:
+	$(MAKE) -f CMakeFiles/TowerDefence.dir/build.make CMakeFiles/TowerDefence.dir/src/CEnemiesGenerator.cpp.o
+.PHONY : src/CEnemiesGenerator.cpp.o
+
+src/CEnemiesGenerator.i: src/CEnemiesGenerator.cpp.i
+
+.PHONY : src/CEnemiesGenerator.i
+
+# target to preprocess a source file
+src/CEnemiesGenerator.cpp.i:
+	$(MAKE) -f CMakeFiles/TowerDefence.dir/build.make CMakeFiles/TowerDefence.dir/src/CEnemiesGenerator.cpp.i
+.PHONY : src/CEnemiesGenerator.cpp.i
+
+src/CEnemiesGenerator.s: src/CEnemiesGenerator.cpp.s
+
+.PHONY : src/CEnemiesGenerator.s
+
+# target to generate assembly for a file
+src/CEnemiesGenerator.cpp.s:
+	$(MAKE) -f CMakeFiles/TowerDefence.dir/build.make CMakeFiles/TowerDefence.dir/src/CEnemiesGenerator.cpp.s
+.PHONY : src/CEnemiesGenerator.cpp.s
+
 src/CEnemy.o: src/CEnemy.cpp.o
 
 .PHONY : src/CEnemy.o
@@ -149,6 +176,33 @@ src/CEnemy.s: src/CEnemy.cpp.s
 src/CEnemy.cpp.s:
 	$(MAKE) -f CMakeFiles/TowerDefence.dir/build.make CMakeFiles/TowerDefence.dir/src/CEnemy.cpp.s
 .PHONY : src/CEnemy.cpp.s
+
+src/CLevel.o: src/CLevel.cpp.o
+
+.PHONY : src/CLevel.o
+
+# target to build an object file
+src/CLevel.cpp.o:
+	$(MAKE) -f CMakeFiles/TowerDefence.dir/build.make CMakeFiles/TowerDefence.dir/src/CLevel.cpp.o
+.PHONY : src/CLevel.cpp.o
+
+src/CLevel.i: src/CLevel.cpp.i
+
+.PHONY : src/CLevel.i
+
+# target to preprocess a source file
+src/CLevel.cpp.i:
+	$(MAKE) -f CMakeFiles/TowerDefence.dir/build.make CMakeFiles/TowerDefence.dir/src/CLevel.cpp.i
+.PHONY : src/CLevel.cpp.i
+
+src/CLevel.s: src/CLevel.cpp.s
+
+.PHONY : src/CLevel.s
+
+# target to generate assembly for a file
+src/CLevel.cpp.s:
+	$(MAKE) -f CMakeFiles/TowerDefence.dir/build.make CMakeFiles/TowerDefence.dir/src/CLevel.cpp.s
+.PHONY : src/CLevel.cpp.s
 
 src/CMap.o: src/CMap.cpp.o
 
@@ -204,6 +258,33 @@ src/CRoute.cpp.s:
 	$(MAKE) -f CMakeFiles/TowerDefence.dir/build.make CMakeFiles/TowerDefence.dir/src/CRoute.cpp.s
 .PHONY : src/CRoute.cpp.s
 
+src/GameOver.o: src/GameOver.cpp.o
+
+.PHONY : src/GameOver.o
+
+# target to build an object file
+src/GameOver.cpp.o:
+	$(MAKE) -f CMakeFiles/TowerDefence.dir/build.make CMakeFiles/TowerDefence.dir/src/GameOver.cpp.o
+.PHONY : src/GameOver.cpp.o
+
+src/GameOver.i: src/GameOver.cpp.i
+
+.PHONY : src/GameOver.i
+
+# target to preprocess a source file
+src/GameOver.cpp.i:
+	$(MAKE) -f CMakeFiles/TowerDefence.dir/build.make CMakeFiles/TowerDefence.dir/src/GameOver.cpp.i
+.PHONY : src/GameOver.cpp.i
+
+src/GameOver.s: src/GameOver.cpp.s
+
+.PHONY : src/GameOver.s
+
+# target to generate assembly for a file
+src/GameOver.cpp.s:
+	$(MAKE) -f CMakeFiles/TowerDefence.dir/build.make CMakeFiles/TowerDefence.dir/src/GameOver.cpp.s
+.PHONY : src/GameOver.cpp.s
+
 src/main.o: src/main.cpp.o
 
 .PHONY : src/main.o
@@ -240,15 +321,24 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... TowerDefence"
+	@echo "... src/CEnemiesGenerator.o"
+	@echo "... src/CEnemiesGenerator.i"
+	@echo "... src/CEnemiesGenerator.s"
 	@echo "... src/CEnemy.o"
 	@echo "... src/CEnemy.i"
 	@echo "... src/CEnemy.s"
+	@echo "... src/CLevel.o"
+	@echo "... src/CLevel.i"
+	@echo "... src/CLevel.s"
 	@echo "... src/CMap.o"
 	@echo "... src/CMap.i"
 	@echo "... src/CMap.s"
 	@echo "... src/CRoute.o"
 	@echo "... src/CRoute.i"
 	@echo "... src/CRoute.s"
+	@echo "... src/GameOver.o"
+	@echo "... src/GameOver.i"
+	@echo "... src/GameOver.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
