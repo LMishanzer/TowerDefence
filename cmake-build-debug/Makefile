@@ -123,6 +123,33 @@ TowerDefence/fast:
 	$(MAKE) -f CMakeFiles/TowerDefence.dir/build.make CMakeFiles/TowerDefence.dir/build
 .PHONY : TowerDefence/fast
 
+src/CBullet.o: src/CBullet.cpp.o
+
+.PHONY : src/CBullet.o
+
+# target to build an object file
+src/CBullet.cpp.o:
+	$(MAKE) -f CMakeFiles/TowerDefence.dir/build.make CMakeFiles/TowerDefence.dir/src/CBullet.cpp.o
+.PHONY : src/CBullet.cpp.o
+
+src/CBullet.i: src/CBullet.cpp.i
+
+.PHONY : src/CBullet.i
+
+# target to preprocess a source file
+src/CBullet.cpp.i:
+	$(MAKE) -f CMakeFiles/TowerDefence.dir/build.make CMakeFiles/TowerDefence.dir/src/CBullet.cpp.i
+.PHONY : src/CBullet.cpp.i
+
+src/CBullet.s: src/CBullet.cpp.s
+
+.PHONY : src/CBullet.s
+
+# target to generate assembly for a file
+src/CBullet.cpp.s:
+	$(MAKE) -f CMakeFiles/TowerDefence.dir/build.make CMakeFiles/TowerDefence.dir/src/CBullet.cpp.s
+.PHONY : src/CBullet.cpp.s
+
 src/CEnemiesGenerator.o: src/CEnemiesGenerator.cpp.o
 
 .PHONY : src/CEnemiesGenerator.o
@@ -258,32 +285,32 @@ src/CRoute.cpp.s:
 	$(MAKE) -f CMakeFiles/TowerDefence.dir/build.make CMakeFiles/TowerDefence.dir/src/CRoute.cpp.s
 .PHONY : src/CRoute.cpp.s
 
-src/GameOver.o: src/GameOver.cpp.o
+src/CTower.o: src/CTower.cpp.o
 
-.PHONY : src/GameOver.o
+.PHONY : src/CTower.o
 
 # target to build an object file
-src/GameOver.cpp.o:
-	$(MAKE) -f CMakeFiles/TowerDefence.dir/build.make CMakeFiles/TowerDefence.dir/src/GameOver.cpp.o
-.PHONY : src/GameOver.cpp.o
+src/CTower.cpp.o:
+	$(MAKE) -f CMakeFiles/TowerDefence.dir/build.make CMakeFiles/TowerDefence.dir/src/CTower.cpp.o
+.PHONY : src/CTower.cpp.o
 
-src/GameOver.i: src/GameOver.cpp.i
+src/CTower.i: src/CTower.cpp.i
 
-.PHONY : src/GameOver.i
+.PHONY : src/CTower.i
 
 # target to preprocess a source file
-src/GameOver.cpp.i:
-	$(MAKE) -f CMakeFiles/TowerDefence.dir/build.make CMakeFiles/TowerDefence.dir/src/GameOver.cpp.i
-.PHONY : src/GameOver.cpp.i
+src/CTower.cpp.i:
+	$(MAKE) -f CMakeFiles/TowerDefence.dir/build.make CMakeFiles/TowerDefence.dir/src/CTower.cpp.i
+.PHONY : src/CTower.cpp.i
 
-src/GameOver.s: src/GameOver.cpp.s
+src/CTower.s: src/CTower.cpp.s
 
-.PHONY : src/GameOver.s
+.PHONY : src/CTower.s
 
 # target to generate assembly for a file
-src/GameOver.cpp.s:
-	$(MAKE) -f CMakeFiles/TowerDefence.dir/build.make CMakeFiles/TowerDefence.dir/src/GameOver.cpp.s
-.PHONY : src/GameOver.cpp.s
+src/CTower.cpp.s:
+	$(MAKE) -f CMakeFiles/TowerDefence.dir/build.make CMakeFiles/TowerDefence.dir/src/CTower.cpp.s
+.PHONY : src/CTower.cpp.s
 
 src/main.o: src/main.cpp.o
 
@@ -321,6 +348,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... TowerDefence"
+	@echo "... src/CBullet.o"
+	@echo "... src/CBullet.i"
+	@echo "... src/CBullet.s"
 	@echo "... src/CEnemiesGenerator.o"
 	@echo "... src/CEnemiesGenerator.i"
 	@echo "... src/CEnemiesGenerator.s"
@@ -336,9 +366,9 @@ help:
 	@echo "... src/CRoute.o"
 	@echo "... src/CRoute.i"
 	@echo "... src/CRoute.s"
-	@echo "... src/GameOver.o"
-	@echo "... src/GameOver.i"
-	@echo "... src/GameOver.s"
+	@echo "... src/CTower.o"
+	@echo "... src/CTower.i"
+	@echo "... src/CTower.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

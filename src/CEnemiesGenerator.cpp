@@ -1,6 +1,6 @@
 #include "CEnemiesGenerator.h"
+#include "CEnemy.h"
 #include <random>
-#include <iostream>
 
 using namespace std;
 
@@ -12,6 +12,8 @@ CEnemiesGenerator::CEnemiesGenerator() {
     m_CurrentSeqLength = 0;
     m_IterCounter = 0;
 
+//    CEnemy::m_Speed = 10;
+
     srand(time(nullptr));
 }
 
@@ -19,7 +21,7 @@ void CEnemiesGenerator::GetLevel(int level) {
     if (m_Level != level) {
         m_Level = level;
         m_MaxLength = level * 5;
-        m_Freq = 50 - level;
+        m_Freq = 50;
     }
     m_IterCounter++;
     if (m_IterCounter == m_Freq){
@@ -29,9 +31,7 @@ void CEnemiesGenerator::GetLevel(int level) {
 
 CEnemy * CEnemiesGenerator::GenerateEnemy() {
     if (m_EnemiesInSeq < m_CurrentSeqLength){
-        auto * enemy = new CEnemy();
-        enemy->m_Mark = '@';
-        enemy->m_Health = 100500;
+        auto * enemy = new CEnemy('@', 100500);
         m_EnemiesInSeq++;
         return enemy;
     }

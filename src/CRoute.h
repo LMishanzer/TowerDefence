@@ -8,7 +8,8 @@
 class CRoute {
 public:
     explicit CRoute(CMap &map);
-    CCoords * GetWay(int &i) const;
+    CCoords * GetWay() const;
+    int GetWayLength() const;
     void Print();
     ~CRoute();
 

@@ -93,12 +93,15 @@ void CRoute::Print() {
     cout << endl;
 }
 
-CCoords * CRoute::GetWay(int &i) const {
+CCoords * CRoute::GetWay() const {
     if (m_Way) {
-        i = m_WayLength;
         return m_Way;
     }
     return nullptr;
+}
+
+int CRoute::GetWayLength() const {
+    return m_WayLength;
 }
 
 CRoute::~CRoute() {

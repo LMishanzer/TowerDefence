@@ -1,5 +1,4 @@
-#include <iostream>
-#include <unistd.h>
+#include <ncurses.h>
 #include "CMap.h"
 #include "CRoute.h"
 #include "CEnemiesGenerator.h"
@@ -12,39 +11,67 @@ CMap * map;
 CLevel * level;
 CEnemiesGenerator * generator;
 bool isOver;
+bool isInterrupted;
 
 void Setup()
 {
+    initscr();
+    noecho();
+    halfdelay(1);
     isOver = false;
+    isInterrupted = false;
 
     map = new CMap();
     level = new CLevel();
     generator = new CEnemiesGenerator();
     map->LoadMap("src/templates/maps/map01.txt");
     CRoute route(*map);
-    map->m_Way = route.GetWay(map->m_WayLength);
-
-    level->SetIterCount(100);
-
-//    for (int i = 0; i < map->m_WayLength; i++){
-//        cout << map->m_Way[i].y << ", " << map->m_Way[i].x << endl;
-//    }
-
-//    route.Print();
-//    delete enemy;
+    map->SetWay(route.GetWay(), route.GetWayLength());
 }
 
 void Draw()
 {
-    system("clear");
-
     map->Print();
-    cout << "Level: " << level->CurrentLevel() << endl;
+    printw("Level: %d\n", level->CurrentLevel());
+    printw("Press A to add a weak tower\n");
+    printw("Press B to add a strong tower\n");
+    printw("Press X to escape\n");
 }
 
 void Input()
 {
+    CTower * tower;
+    int number;
+    switch (getch()) {
+        case 'a':
+            tower = new CTower('A');
+            printw("Enter number of the position:\n");
 
+            halfdelay(100);
+            number = getch() - 48;
+            halfdelay(1);
+            clear();
+
+            if (!map->AddTower(tower, number))
+                delete tower;
+            break;
+        case 'b':
+            tower = new CTower('B');
+
+            printw("Enter number of the position:\n");
+
+            halfdelay(100);
+            number = getch() - 48;
+            halfdelay(1);
+            clear();
+
+            if (!map->AddTower(tower, number))
+                delete tower;
+            break;
+        case 'x':
+            isInterrupted = true;
+            break;
+    }
 }
 
 void Logic()
@@ -64,15 +91,18 @@ void Logic()
 int main() {
     Setup();
 
-    while(!isOver)
+    while(!isOver && !isInterrupted)
     {
         Draw();
         Input();
         Logic();
-        usleep(100000);
     }
-    system("clear");
-    GameOver();
+    clear();
+
+    if (!isInterrupted)
+        GameOver();
+
+    endwin();
 
     delete map;
     delete level;

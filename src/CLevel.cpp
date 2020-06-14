@@ -3,7 +3,7 @@
 CLevel::CLevel() {
     m_Level = 1;
     m_IterCount = 0;
-    m_IterToNext = 100;
+    m_IterToNext = 500;
 }
 
 void CLevel::Next() {

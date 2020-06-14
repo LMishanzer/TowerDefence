@@ -3,12 +3,18 @@
 #ifndef TOWERDEFENCE_CENEMY_H
 #define TOWERDEFENCE_CENEMY_H
 
+
 class CEnemy {
 public:
+    CEnemy(char mark, int hp);
+
+    static int m_Speed;
+
     char m_Mark;
-    int m_Health;
+    int m_MaxHealth;
+    int m_CurrentHealth;
     int m_Iteration;
-    CCoords m_Pos;
+    CCoords m_Pos{};
 };
 
 

@@ -135,18 +135,31 @@ CMakeFiles/TowerDefence.dir/src/CLevel.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TowerDefence.dir/src/CLevel.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mike/PA2/TowerDefence/src/CLevel.cpp -o CMakeFiles/TowerDefence.dir/src/CLevel.cpp.s
 
-CMakeFiles/TowerDefence.dir/src/GameOver.cpp.o: CMakeFiles/TowerDefence.dir/flags.make
-CMakeFiles/TowerDefence.dir/src/GameOver.cpp.o: ../src/GameOver.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mike/PA2/TowerDefence/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/TowerDefence.dir/src/GameOver.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TowerDefence.dir/src/GameOver.cpp.o -c /home/mike/PA2/TowerDefence/src/GameOver.cpp
+CMakeFiles/TowerDefence.dir/src/CTower.cpp.o: CMakeFiles/TowerDefence.dir/flags.make
+CMakeFiles/TowerDefence.dir/src/CTower.cpp.o: ../src/CTower.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mike/PA2/TowerDefence/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/TowerDefence.dir/src/CTower.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TowerDefence.dir/src/CTower.cpp.o -c /home/mike/PA2/TowerDefence/src/CTower.cpp
 
-CMakeFiles/TowerDefence.dir/src/GameOver.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TowerDefence.dir/src/GameOver.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mike/PA2/TowerDefence/src/GameOver.cpp > CMakeFiles/TowerDefence.dir/src/GameOver.cpp.i
+CMakeFiles/TowerDefence.dir/src/CTower.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TowerDefence.dir/src/CTower.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mike/PA2/TowerDefence/src/CTower.cpp > CMakeFiles/TowerDefence.dir/src/CTower.cpp.i
 
-CMakeFiles/TowerDefence.dir/src/GameOver.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TowerDefence.dir/src/GameOver.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mike/PA2/TowerDefence/src/GameOver.cpp -o CMakeFiles/TowerDefence.dir/src/GameOver.cpp.s
+CMakeFiles/TowerDefence.dir/src/CTower.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TowerDefence.dir/src/CTower.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mike/PA2/TowerDefence/src/CTower.cpp -o CMakeFiles/TowerDefence.dir/src/CTower.cpp.s
+
+CMakeFiles/TowerDefence.dir/src/CBullet.cpp.o: CMakeFiles/TowerDefence.dir/flags.make
+CMakeFiles/TowerDefence.dir/src/CBullet.cpp.o: ../src/CBullet.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mike/PA2/TowerDefence/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/TowerDefence.dir/src/CBullet.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TowerDefence.dir/src/CBullet.cpp.o -c /home/mike/PA2/TowerDefence/src/CBullet.cpp
+
+CMakeFiles/TowerDefence.dir/src/CBullet.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TowerDefence.dir/src/CBullet.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mike/PA2/TowerDefence/src/CBullet.cpp > CMakeFiles/TowerDefence.dir/src/CBullet.cpp.i
+
+CMakeFiles/TowerDefence.dir/src/CBullet.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TowerDefence.dir/src/CBullet.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mike/PA2/TowerDefence/src/CBullet.cpp -o CMakeFiles/TowerDefence.dir/src/CBullet.cpp.s
 
 # Object files for target TowerDefence
 TowerDefence_OBJECTS = \
@@ -156,7 +169,8 @@ TowerDefence_OBJECTS = \
 "CMakeFiles/TowerDefence.dir/src/CRoute.cpp.o" \
 "CMakeFiles/TowerDefence.dir/src/CEnemiesGenerator.cpp.o" \
 "CMakeFiles/TowerDefence.dir/src/CLevel.cpp.o" \
-"CMakeFiles/TowerDefence.dir/src/GameOver.cpp.o"
+"CMakeFiles/TowerDefence.dir/src/CTower.cpp.o" \
+"CMakeFiles/TowerDefence.dir/src/CBullet.cpp.o"
 
 # External object files for target TowerDefence
 TowerDefence_EXTERNAL_OBJECTS =
@@ -167,10 +181,11 @@ TowerDefence: CMakeFiles/TowerDefence.dir/src/CEnemy.cpp.o
 TowerDefence: CMakeFiles/TowerDefence.dir/src/CRoute.cpp.o
 TowerDefence: CMakeFiles/TowerDefence.dir/src/CEnemiesGenerator.cpp.o
 TowerDefence: CMakeFiles/TowerDefence.dir/src/CLevel.cpp.o
-TowerDefence: CMakeFiles/TowerDefence.dir/src/GameOver.cpp.o
+TowerDefence: CMakeFiles/TowerDefence.dir/src/CTower.cpp.o
+TowerDefence: CMakeFiles/TowerDefence.dir/src/CBullet.cpp.o
 TowerDefence: CMakeFiles/TowerDefence.dir/build.make
 TowerDefence: CMakeFiles/TowerDefence.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/mike/PA2/TowerDefence/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable TowerDefence"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/mike/PA2/TowerDefence/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable TowerDefence"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/TowerDefence.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
