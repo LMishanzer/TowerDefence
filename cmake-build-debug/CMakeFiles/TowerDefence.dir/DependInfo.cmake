@@ -4,14 +4,13 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/mike/PA2/TowerDefence/src/CBullet.cpp" "/home/mike/PA2/TowerDefence/cmake-build-debug/CMakeFiles/TowerDefence.dir/src/CBullet.cpp.o"
-  "/home/mike/PA2/TowerDefence/src/CEnemiesGenerator.cpp" "/home/mike/PA2/TowerDefence/cmake-build-debug/CMakeFiles/TowerDefence.dir/src/CEnemiesGenerator.cpp.o"
-  "/home/mike/PA2/TowerDefence/src/CEnemy.cpp" "/home/mike/PA2/TowerDefence/cmake-build-debug/CMakeFiles/TowerDefence.dir/src/CEnemy.cpp.o"
-  "/home/mike/PA2/TowerDefence/src/CLevel.cpp" "/home/mike/PA2/TowerDefence/cmake-build-debug/CMakeFiles/TowerDefence.dir/src/CLevel.cpp.o"
-  "/home/mike/PA2/TowerDefence/src/CMap.cpp" "/home/mike/PA2/TowerDefence/cmake-build-debug/CMakeFiles/TowerDefence.dir/src/CMap.cpp.o"
-  "/home/mike/PA2/TowerDefence/src/CRoute.cpp" "/home/mike/PA2/TowerDefence/cmake-build-debug/CMakeFiles/TowerDefence.dir/src/CRoute.cpp.o"
-  "/home/mike/PA2/TowerDefence/src/CTower.cpp" "/home/mike/PA2/TowerDefence/cmake-build-debug/CMakeFiles/TowerDefence.dir/src/CTower.cpp.o"
   "/home/mike/PA2/TowerDefence/src/main.cpp" "/home/mike/PA2/TowerDefence/cmake-build-debug/CMakeFiles/TowerDefence.dir/src/main.cpp.o"
+  "/home/mike/PA2/TowerDefence/src/sources/CEnemiesGenerator.cpp" "/home/mike/PA2/TowerDefence/cmake-build-debug/CMakeFiles/TowerDefence.dir/src/sources/CEnemiesGenerator.cpp.o"
+  "/home/mike/PA2/TowerDefence/src/sources/CEnemy.cpp" "/home/mike/PA2/TowerDefence/cmake-build-debug/CMakeFiles/TowerDefence.dir/src/sources/CEnemy.cpp.o"
+  "/home/mike/PA2/TowerDefence/src/sources/CLevel.cpp" "/home/mike/PA2/TowerDefence/cmake-build-debug/CMakeFiles/TowerDefence.dir/src/sources/CLevel.cpp.o"
+  "/home/mike/PA2/TowerDefence/src/sources/CMap.cpp" "/home/mike/PA2/TowerDefence/cmake-build-debug/CMakeFiles/TowerDefence.dir/src/sources/CMap.cpp.o"
+  "/home/mike/PA2/TowerDefence/src/sources/CRoute.cpp" "/home/mike/PA2/TowerDefence/cmake-build-debug/CMakeFiles/TowerDefence.dir/src/sources/CRoute.cpp.o"
+  "/home/mike/PA2/TowerDefence/src/sources/CTower.cpp" "/home/mike/PA2/TowerDefence/cmake-build-debug/CMakeFiles/TowerDefence.dir/src/sources/CTower.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

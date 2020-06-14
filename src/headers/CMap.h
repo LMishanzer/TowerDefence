@@ -35,6 +35,7 @@ public:
     CCoords * m_Way;
     int m_WayLength;
     int m_PassedEnemies;
+    int m_KilledEnemies;
 };
 
 

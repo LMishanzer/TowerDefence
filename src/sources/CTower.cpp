@@ -1,5 +1,5 @@
 #include <fstream>
-#include "CTower.h"
+#include "../headers/CTower.h"
 
 using namespace std;
 
@@ -8,10 +8,10 @@ CTower::CTower(char mark) {
     ifstream file;
 
     if (mark == 'A'){
-        file.open("templates/enemies/A");
+        file.open("src/templates/towers/A");
     }
     else if (mark == 'B'){
-        file.open("templates/enemies/B");
+        file.open("src/templates/towers/B");
     }
 
     file >> m_Damage;
@@ -31,4 +31,12 @@ CCoords CTower::GetPosition() const {
 
 void CTower::SetPosition(CCoords pos) {
     m_Pos = pos;
+}
+
+int CTower::GetDamage() const {
+    return m_Damage;
+}
+
+int CTower::GetRange() const {
+    return m_Range;
 }

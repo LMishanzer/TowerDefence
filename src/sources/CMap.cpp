@@ -1,7 +1,8 @@
-#include "CMap.h"
+#include "../headers/CMap.h"
 #include <iostream>
 #include <fstream>
 #include <ncurses.h>
+#include <unistd.h>
 
 using namespace std;
 
@@ -19,6 +20,7 @@ CMap::CMap() {
     m_Way = nullptr;
     m_WayLength = 0;
     m_PassedEnemies = 0;
+    m_KilledEnemies = 0;
 }
 
 void CMap::Print() const {
@@ -30,6 +32,7 @@ void CMap::Print() const {
         printw("\n");
     }
     printw("Passed enemies: %d\n", m_PassedEnemies);
+    printw("Killed enemies: %d\n", m_KilledEnemies);
     refresh();
 }
 
@@ -81,7 +84,7 @@ void CMap::CompileEnemies() const {
 
     for (int i = 0; i < m_MaxEnemiesCount; i++) {
         if (m_Enemies[i])
-            m_Field[m_Enemies[i]->m_Pos.y][m_Enemies[i]->m_Pos.x] = m_Enemies[i]->m_Mark;
+            m_Field[m_Enemies[i]->GetPosition().y][m_Enemies[i]->GetPosition().x] = m_Enemies[i]->GetMark();
     }
 
     for (int i = 0; i < m_TowersCount; i++) {
@@ -94,23 +97,41 @@ void CMap::AddEnemy(CEnemy *enemy) {
         return;
     m_Enemies[m_EnemyCount] = enemy;
     enemy->m_Iteration = 0;
-    enemy->m_Pos = m_Start;
+    enemy->SetPosition(m_Start);
     m_EnemyCount++;
     if (m_EnemyCount == m_MaxEnemiesCount)
         m_EnemyCount = 0;
 }
 
 void CMap::MoveEnemies() {
+    for (int i = 0; i < m_TowersCount; i++){
+        for (int j = 0; j < m_MaxEnemiesCount; j++){
+            if (m_Enemies[j]){
+//                printw("%d\n", m_Towers[i]->GetRange());
+//                usleep(1000000);
+                if (abs(m_Towers[i]->GetPosition().y - m_Enemies[j]->GetPosition().y) <= m_Towers[i]->GetRange()
+                && abs(m_Towers[i]->GetPosition().x - m_Enemies[j]->GetPosition().x) <= m_Towers[i]->GetRange()){
+                    m_Enemies[j]->Hit(m_Towers[i]->GetDamage());
+                    if (m_Enemies[j]->IsDead()){
+                        delete m_Enemies[j];
+                        m_Enemies[j] = nullptr;
+                        m_KilledEnemies++;
+                    }
+                }
+            }
+        }
+    }
+
     for (int i = 0; i < m_MaxEnemiesCount; i++) {
         if (m_Enemies[i]) {
-            if (m_Enemies[i]->m_Pos == m_Finish) {
+            if (m_Enemies[i]->GetPosition() == m_Finish) {
                 delete m_Enemies[i];
                 m_Enemies[i] = nullptr;
                 m_PassedEnemies++;
             }
             else {
                 m_Enemies[i]->m_Iteration++;
-                m_Enemies[i]->m_Pos = m_Way[m_Enemies[i]->m_Iteration];
+                m_Enemies[i]->SetPosition(m_Way[m_Enemies[i]->m_Iteration]);
             }
         }
     }

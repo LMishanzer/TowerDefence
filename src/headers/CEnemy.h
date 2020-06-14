@@ -6,14 +6,20 @@
 
 class CEnemy {
 public:
-    CEnemy(char mark, int hp);
-
     static int m_Speed;
+    int m_Iteration;
 
+    CEnemy(char mark, int hp);
+    CCoords GetPosition() const;
+    void SetPosition(CCoords pos);
+    char GetMark() const;
+    void Hit(int damage);
+    bool IsDead() const;
+
+private:
     char m_Mark;
     int m_MaxHealth;
     int m_CurrentHealth;
-    int m_Iteration;
     CCoords m_Pos{};
 };
 

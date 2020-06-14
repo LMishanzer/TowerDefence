@@ -123,195 +123,6 @@ TowerDefence/fast:
 	$(MAKE) -f CMakeFiles/TowerDefence.dir/build.make CMakeFiles/TowerDefence.dir/build
 .PHONY : TowerDefence/fast
 
-src/CBullet.o: src/CBullet.cpp.o
-
-.PHONY : src/CBullet.o
-
-# target to build an object file
-src/CBullet.cpp.o:
-	$(MAKE) -f CMakeFiles/TowerDefence.dir/build.make CMakeFiles/TowerDefence.dir/src/CBullet.cpp.o
-.PHONY : src/CBullet.cpp.o
-
-src/CBullet.i: src/CBullet.cpp.i
-
-.PHONY : src/CBullet.i
-
-# target to preprocess a source file
-src/CBullet.cpp.i:
-	$(MAKE) -f CMakeFiles/TowerDefence.dir/build.make CMakeFiles/TowerDefence.dir/src/CBullet.cpp.i
-.PHONY : src/CBullet.cpp.i
-
-src/CBullet.s: src/CBullet.cpp.s
-
-.PHONY : src/CBullet.s
-
-# target to generate assembly for a file
-src/CBullet.cpp.s:
-	$(MAKE) -f CMakeFiles/TowerDefence.dir/build.make CMakeFiles/TowerDefence.dir/src/CBullet.cpp.s
-.PHONY : src/CBullet.cpp.s
-
-src/CEnemiesGenerator.o: src/CEnemiesGenerator.cpp.o
-
-.PHONY : src/CEnemiesGenerator.o
-
-# target to build an object file
-src/CEnemiesGenerator.cpp.o:
-	$(MAKE) -f CMakeFiles/TowerDefence.dir/build.make CMakeFiles/TowerDefence.dir/src/CEnemiesGenerator.cpp.o
-.PHONY : src/CEnemiesGenerator.cpp.o
-
-src/CEnemiesGenerator.i: src/CEnemiesGenerator.cpp.i
-
-.PHONY : src/CEnemiesGenerator.i
-
-# target to preprocess a source file
-src/CEnemiesGenerator.cpp.i:
-	$(MAKE) -f CMakeFiles/TowerDefence.dir/build.make CMakeFiles/TowerDefence.dir/src/CEnemiesGenerator.cpp.i
-.PHONY : src/CEnemiesGenerator.cpp.i
-
-src/CEnemiesGenerator.s: src/CEnemiesGenerator.cpp.s
-
-.PHONY : src/CEnemiesGenerator.s
-
-# target to generate assembly for a file
-src/CEnemiesGenerator.cpp.s:
-	$(MAKE) -f CMakeFiles/TowerDefence.dir/build.make CMakeFiles/TowerDefence.dir/src/CEnemiesGenerator.cpp.s
-.PHONY : src/CEnemiesGenerator.cpp.s
-
-src/CEnemy.o: src/CEnemy.cpp.o
-
-.PHONY : src/CEnemy.o
-
-# target to build an object file
-src/CEnemy.cpp.o:
-	$(MAKE) -f CMakeFiles/TowerDefence.dir/build.make CMakeFiles/TowerDefence.dir/src/CEnemy.cpp.o
-.PHONY : src/CEnemy.cpp.o
-
-src/CEnemy.i: src/CEnemy.cpp.i
-
-.PHONY : src/CEnemy.i
-
-# target to preprocess a source file
-src/CEnemy.cpp.i:
-	$(MAKE) -f CMakeFiles/TowerDefence.dir/build.make CMakeFiles/TowerDefence.dir/src/CEnemy.cpp.i
-.PHONY : src/CEnemy.cpp.i
-
-src/CEnemy.s: src/CEnemy.cpp.s
-
-.PHONY : src/CEnemy.s
-
-# target to generate assembly for a file
-src/CEnemy.cpp.s:
-	$(MAKE) -f CMakeFiles/TowerDefence.dir/build.make CMakeFiles/TowerDefence.dir/src/CEnemy.cpp.s
-.PHONY : src/CEnemy.cpp.s
-
-src/CLevel.o: src/CLevel.cpp.o
-
-.PHONY : src/CLevel.o
-
-# target to build an object file
-src/CLevel.cpp.o:
-	$(MAKE) -f CMakeFiles/TowerDefence.dir/build.make CMakeFiles/TowerDefence.dir/src/CLevel.cpp.o
-.PHONY : src/CLevel.cpp.o
-
-src/CLevel.i: src/CLevel.cpp.i
-
-.PHONY : src/CLevel.i
-
-# target to preprocess a source file
-src/CLevel.cpp.i:
-	$(MAKE) -f CMakeFiles/TowerDefence.dir/build.make CMakeFiles/TowerDefence.dir/src/CLevel.cpp.i
-.PHONY : src/CLevel.cpp.i
-
-src/CLevel.s: src/CLevel.cpp.s
-
-.PHONY : src/CLevel.s
-
-# target to generate assembly for a file
-src/CLevel.cpp.s:
-	$(MAKE) -f CMakeFiles/TowerDefence.dir/build.make CMakeFiles/TowerDefence.dir/src/CLevel.cpp.s
-.PHONY : src/CLevel.cpp.s
-
-src/CMap.o: src/CMap.cpp.o
-
-.PHONY : src/CMap.o
-
-# target to build an object file
-src/CMap.cpp.o:
-	$(MAKE) -f CMakeFiles/TowerDefence.dir/build.make CMakeFiles/TowerDefence.dir/src/CMap.cpp.o
-.PHONY : src/CMap.cpp.o
-
-src/CMap.i: src/CMap.cpp.i
-
-.PHONY : src/CMap.i
-
-# target to preprocess a source file
-src/CMap.cpp.i:
-	$(MAKE) -f CMakeFiles/TowerDefence.dir/build.make CMakeFiles/TowerDefence.dir/src/CMap.cpp.i
-.PHONY : src/CMap.cpp.i
-
-src/CMap.s: src/CMap.cpp.s
-
-.PHONY : src/CMap.s
-
-# target to generate assembly for a file
-src/CMap.cpp.s:
-	$(MAKE) -f CMakeFiles/TowerDefence.dir/build.make CMakeFiles/TowerDefence.dir/src/CMap.cpp.s
-.PHONY : src/CMap.cpp.s
-
-src/CRoute.o: src/CRoute.cpp.o
-
-.PHONY : src/CRoute.o
-
-# target to build an object file
-src/CRoute.cpp.o:
-	$(MAKE) -f CMakeFiles/TowerDefence.dir/build.make CMakeFiles/TowerDefence.dir/src/CRoute.cpp.o
-.PHONY : src/CRoute.cpp.o
-
-src/CRoute.i: src/CRoute.cpp.i
-
-.PHONY : src/CRoute.i
-
-# target to preprocess a source file
-src/CRoute.cpp.i:
-	$(MAKE) -f CMakeFiles/TowerDefence.dir/build.make CMakeFiles/TowerDefence.dir/src/CRoute.cpp.i
-.PHONY : src/CRoute.cpp.i
-
-src/CRoute.s: src/CRoute.cpp.s
-
-.PHONY : src/CRoute.s
-
-# target to generate assembly for a file
-src/CRoute.cpp.s:
-	$(MAKE) -f CMakeFiles/TowerDefence.dir/build.make CMakeFiles/TowerDefence.dir/src/CRoute.cpp.s
-.PHONY : src/CRoute.cpp.s
-
-src/CTower.o: src/CTower.cpp.o
-
-.PHONY : src/CTower.o
-
-# target to build an object file
-src/CTower.cpp.o:
-	$(MAKE) -f CMakeFiles/TowerDefence.dir/build.make CMakeFiles/TowerDefence.dir/src/CTower.cpp.o
-.PHONY : src/CTower.cpp.o
-
-src/CTower.i: src/CTower.cpp.i
-
-.PHONY : src/CTower.i
-
-# target to preprocess a source file
-src/CTower.cpp.i:
-	$(MAKE) -f CMakeFiles/TowerDefence.dir/build.make CMakeFiles/TowerDefence.dir/src/CTower.cpp.i
-.PHONY : src/CTower.cpp.i
-
-src/CTower.s: src/CTower.cpp.s
-
-.PHONY : src/CTower.s
-
-# target to generate assembly for a file
-src/CTower.cpp.s:
-	$(MAKE) -f CMakeFiles/TowerDefence.dir/build.make CMakeFiles/TowerDefence.dir/src/CTower.cpp.s
-.PHONY : src/CTower.cpp.s
-
 src/main.o: src/main.cpp.o
 
 .PHONY : src/main.o
@@ -339,6 +150,168 @@ src/main.cpp.s:
 	$(MAKE) -f CMakeFiles/TowerDefence.dir/build.make CMakeFiles/TowerDefence.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/sources/CEnemiesGenerator.o: src/sources/CEnemiesGenerator.cpp.o
+
+.PHONY : src/sources/CEnemiesGenerator.o
+
+# target to build an object file
+src/sources/CEnemiesGenerator.cpp.o:
+	$(MAKE) -f CMakeFiles/TowerDefence.dir/build.make CMakeFiles/TowerDefence.dir/src/sources/CEnemiesGenerator.cpp.o
+.PHONY : src/sources/CEnemiesGenerator.cpp.o
+
+src/sources/CEnemiesGenerator.i: src/sources/CEnemiesGenerator.cpp.i
+
+.PHONY : src/sources/CEnemiesGenerator.i
+
+# target to preprocess a source file
+src/sources/CEnemiesGenerator.cpp.i:
+	$(MAKE) -f CMakeFiles/TowerDefence.dir/build.make CMakeFiles/TowerDefence.dir/src/sources/CEnemiesGenerator.cpp.i
+.PHONY : src/sources/CEnemiesGenerator.cpp.i
+
+src/sources/CEnemiesGenerator.s: src/sources/CEnemiesGenerator.cpp.s
+
+.PHONY : src/sources/CEnemiesGenerator.s
+
+# target to generate assembly for a file
+src/sources/CEnemiesGenerator.cpp.s:
+	$(MAKE) -f CMakeFiles/TowerDefence.dir/build.make CMakeFiles/TowerDefence.dir/src/sources/CEnemiesGenerator.cpp.s
+.PHONY : src/sources/CEnemiesGenerator.cpp.s
+
+src/sources/CEnemy.o: src/sources/CEnemy.cpp.o
+
+.PHONY : src/sources/CEnemy.o
+
+# target to build an object file
+src/sources/CEnemy.cpp.o:
+	$(MAKE) -f CMakeFiles/TowerDefence.dir/build.make CMakeFiles/TowerDefence.dir/src/sources/CEnemy.cpp.o
+.PHONY : src/sources/CEnemy.cpp.o
+
+src/sources/CEnemy.i: src/sources/CEnemy.cpp.i
+
+.PHONY : src/sources/CEnemy.i
+
+# target to preprocess a source file
+src/sources/CEnemy.cpp.i:
+	$(MAKE) -f CMakeFiles/TowerDefence.dir/build.make CMakeFiles/TowerDefence.dir/src/sources/CEnemy.cpp.i
+.PHONY : src/sources/CEnemy.cpp.i
+
+src/sources/CEnemy.s: src/sources/CEnemy.cpp.s
+
+.PHONY : src/sources/CEnemy.s
+
+# target to generate assembly for a file
+src/sources/CEnemy.cpp.s:
+	$(MAKE) -f CMakeFiles/TowerDefence.dir/build.make CMakeFiles/TowerDefence.dir/src/sources/CEnemy.cpp.s
+.PHONY : src/sources/CEnemy.cpp.s
+
+src/sources/CLevel.o: src/sources/CLevel.cpp.o
+
+.PHONY : src/sources/CLevel.o
+
+# target to build an object file
+src/sources/CLevel.cpp.o:
+	$(MAKE) -f CMakeFiles/TowerDefence.dir/build.make CMakeFiles/TowerDefence.dir/src/sources/CLevel.cpp.o
+.PHONY : src/sources/CLevel.cpp.o
+
+src/sources/CLevel.i: src/sources/CLevel.cpp.i
+
+.PHONY : src/sources/CLevel.i
+
+# target to preprocess a source file
+src/sources/CLevel.cpp.i:
+	$(MAKE) -f CMakeFiles/TowerDefence.dir/build.make CMakeFiles/TowerDefence.dir/src/sources/CLevel.cpp.i
+.PHONY : src/sources/CLevel.cpp.i
+
+src/sources/CLevel.s: src/sources/CLevel.cpp.s
+
+.PHONY : src/sources/CLevel.s
+
+# target to generate assembly for a file
+src/sources/CLevel.cpp.s:
+	$(MAKE) -f CMakeFiles/TowerDefence.dir/build.make CMakeFiles/TowerDefence.dir/src/sources/CLevel.cpp.s
+.PHONY : src/sources/CLevel.cpp.s
+
+src/sources/CMap.o: src/sources/CMap.cpp.o
+
+.PHONY : src/sources/CMap.o
+
+# target to build an object file
+src/sources/CMap.cpp.o:
+	$(MAKE) -f CMakeFiles/TowerDefence.dir/build.make CMakeFiles/TowerDefence.dir/src/sources/CMap.cpp.o
+.PHONY : src/sources/CMap.cpp.o
+
+src/sources/CMap.i: src/sources/CMap.cpp.i
+
+.PHONY : src/sources/CMap.i
+
+# target to preprocess a source file
+src/sources/CMap.cpp.i:
+	$(MAKE) -f CMakeFiles/TowerDefence.dir/build.make CMakeFiles/TowerDefence.dir/src/sources/CMap.cpp.i
+.PHONY : src/sources/CMap.cpp.i
+
+src/sources/CMap.s: src/sources/CMap.cpp.s
+
+.PHONY : src/sources/CMap.s
+
+# target to generate assembly for a file
+src/sources/CMap.cpp.s:
+	$(MAKE) -f CMakeFiles/TowerDefence.dir/build.make CMakeFiles/TowerDefence.dir/src/sources/CMap.cpp.s
+.PHONY : src/sources/CMap.cpp.s
+
+src/sources/CRoute.o: src/sources/CRoute.cpp.o
+
+.PHONY : src/sources/CRoute.o
+
+# target to build an object file
+src/sources/CRoute.cpp.o:
+	$(MAKE) -f CMakeFiles/TowerDefence.dir/build.make CMakeFiles/TowerDefence.dir/src/sources/CRoute.cpp.o
+.PHONY : src/sources/CRoute.cpp.o
+
+src/sources/CRoute.i: src/sources/CRoute.cpp.i
+
+.PHONY : src/sources/CRoute.i
+
+# target to preprocess a source file
+src/sources/CRoute.cpp.i:
+	$(MAKE) -f CMakeFiles/TowerDefence.dir/build.make CMakeFiles/TowerDefence.dir/src/sources/CRoute.cpp.i
+.PHONY : src/sources/CRoute.cpp.i
+
+src/sources/CRoute.s: src/sources/CRoute.cpp.s
+
+.PHONY : src/sources/CRoute.s
+
+# target to generate assembly for a file
+src/sources/CRoute.cpp.s:
+	$(MAKE) -f CMakeFiles/TowerDefence.dir/build.make CMakeFiles/TowerDefence.dir/src/sources/CRoute.cpp.s
+.PHONY : src/sources/CRoute.cpp.s
+
+src/sources/CTower.o: src/sources/CTower.cpp.o
+
+.PHONY : src/sources/CTower.o
+
+# target to build an object file
+src/sources/CTower.cpp.o:
+	$(MAKE) -f CMakeFiles/TowerDefence.dir/build.make CMakeFiles/TowerDefence.dir/src/sources/CTower.cpp.o
+.PHONY : src/sources/CTower.cpp.o
+
+src/sources/CTower.i: src/sources/CTower.cpp.i
+
+.PHONY : src/sources/CTower.i
+
+# target to preprocess a source file
+src/sources/CTower.cpp.i:
+	$(MAKE) -f CMakeFiles/TowerDefence.dir/build.make CMakeFiles/TowerDefence.dir/src/sources/CTower.cpp.i
+.PHONY : src/sources/CTower.cpp.i
+
+src/sources/CTower.s: src/sources/CTower.cpp.s
+
+.PHONY : src/sources/CTower.s
+
+# target to generate assembly for a file
+src/sources/CTower.cpp.s:
+	$(MAKE) -f CMakeFiles/TowerDefence.dir/build.make CMakeFiles/TowerDefence.dir/src/sources/CTower.cpp.s
+.PHONY : src/sources/CTower.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -348,30 +321,27 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... TowerDefence"
-	@echo "... src/CBullet.o"
-	@echo "... src/CBullet.i"
-	@echo "... src/CBullet.s"
-	@echo "... src/CEnemiesGenerator.o"
-	@echo "... src/CEnemiesGenerator.i"
-	@echo "... src/CEnemiesGenerator.s"
-	@echo "... src/CEnemy.o"
-	@echo "... src/CEnemy.i"
-	@echo "... src/CEnemy.s"
-	@echo "... src/CLevel.o"
-	@echo "... src/CLevel.i"
-	@echo "... src/CLevel.s"
-	@echo "... src/CMap.o"
-	@echo "... src/CMap.i"
-	@echo "... src/CMap.s"
-	@echo "... src/CRoute.o"
-	@echo "... src/CRoute.i"
-	@echo "... src/CRoute.s"
-	@echo "... src/CTower.o"
-	@echo "... src/CTower.i"
-	@echo "... src/CTower.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/sources/CEnemiesGenerator.o"
+	@echo "... src/sources/CEnemiesGenerator.i"
+	@echo "... src/sources/CEnemiesGenerator.s"
+	@echo "... src/sources/CEnemy.o"
+	@echo "... src/sources/CEnemy.i"
+	@echo "... src/sources/CEnemy.s"
+	@echo "... src/sources/CLevel.o"
+	@echo "... src/sources/CLevel.i"
+	@echo "... src/sources/CLevel.s"
+	@echo "... src/sources/CMap.o"
+	@echo "... src/sources/CMap.i"
+	@echo "... src/sources/CMap.s"
+	@echo "... src/sources/CRoute.o"
+	@echo "... src/sources/CRoute.i"
+	@echo "... src/sources/CRoute.s"
+	@echo "... src/sources/CTower.o"
+	@echo "... src/sources/CTower.i"
+	@echo "... src/sources/CTower.s"
 .PHONY : help
 
 

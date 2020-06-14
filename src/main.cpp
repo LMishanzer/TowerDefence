@@ -1,9 +1,9 @@
 #include <ncurses.h>
-#include "CMap.h"
-#include "CRoute.h"
-#include "CEnemiesGenerator.h"
-#include "CLevel.h"
-#include "GameOver.h"
+#include "headers/CMap.h"
+#include "headers/CRoute.h"
+#include "headers/CEnemiesGenerator.h"
+#include "headers/CLevel.h"
+#include "headers/GameOver.h"
 
 using namespace std;
 
@@ -12,6 +12,8 @@ CLevel * level;
 CEnemiesGenerator * generator;
 bool isOver;
 bool isInterrupted;
+int totalSpeed;
+int iterCounter;
 
 void Setup()
 {
@@ -20,6 +22,8 @@ void Setup()
     halfdelay(1);
     isOver = false;
     isInterrupted = false;
+    totalSpeed = 2;
+    iterCounter = 0;
 
     map = new CMap();
     level = new CLevel();
@@ -76,14 +80,16 @@ void Input()
 
 void Logic()
 {
-    map->MoveEnemies();
-
-    level->Next();
-    generator->GetLevel(level->CurrentLevel());
-    auto * enemy = generator->GenerateEnemy();
-    map->AddEnemy(enemy);
-
-    isOver = map->IsOver();
+    if (iterCounter == totalSpeed) {
+        map->MoveEnemies();
+        level->Next();
+        generator->GetLevel(level->CurrentLevel());
+        auto *enemy = generator->GenerateEnemy();
+        map->AddEnemy(enemy);
+        isOver = map->IsOver();
+        iterCounter = 0;
+    }
+    iterCounter++;
 
     map->CompileEnemies();
 }

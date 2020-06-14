@@ -1,5 +1,5 @@
-#include "CEnemiesGenerator.h"
-#include "CEnemy.h"
+#include "../headers/CEnemiesGenerator.h"
+#include "../headers/CEnemy.h"
 #include <random>
 
 using namespace std;
@@ -31,7 +31,7 @@ void CEnemiesGenerator::GetLevel(int level) {
 
 CEnemy * CEnemiesGenerator::GenerateEnemy() {
     if (m_EnemiesInSeq < m_CurrentSeqLength){
-        auto * enemy = new CEnemy('@', 100500);
+        auto * enemy = new CEnemy('@', 10);
         m_EnemiesInSeq++;
         return enemy;
     }

@@ -1,2 +1,2 @@
 all:
-	g++ src/main.cpp src/CMap.cpp src/CEnemy.cpp src/CRoute.cpp src/CEnemiesGenerator.cpp src/CLevel.cpp src/CTower.cpp -o game.exe -fsanitize=address -lncurses
+	g++ src/main.cpp src/sources/CMap.cpp src/sources/CEnemy.cpp src/sources/CRoute.cpp src/sources/CEnemiesGenerator.cpp src/sources/CLevel.cpp src/sources/CTower.cpp -o game.exe -fsanitize=address -lncurses

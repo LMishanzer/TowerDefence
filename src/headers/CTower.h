@@ -10,6 +10,8 @@ public:
     CCoords GetPosition() const;
     char GetMark() const;
     void SetPosition(CCoords pos);
+    int GetRange() const;
+    int GetDamage() const;
 
 private:
     int m_Damage;
