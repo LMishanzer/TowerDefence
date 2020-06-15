@@ -150,6 +150,33 @@ src/main.cpp.s:
 	$(MAKE) -f CMakeFiles/TowerDefence.dir/build.make CMakeFiles/TowerDefence.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/sources/CBullet.o: src/sources/CBullet.cpp.o
+
+.PHONY : src/sources/CBullet.o
+
+# target to build an object file
+src/sources/CBullet.cpp.o:
+	$(MAKE) -f CMakeFiles/TowerDefence.dir/build.make CMakeFiles/TowerDefence.dir/src/sources/CBullet.cpp.o
+.PHONY : src/sources/CBullet.cpp.o
+
+src/sources/CBullet.i: src/sources/CBullet.cpp.i
+
+.PHONY : src/sources/CBullet.i
+
+# target to preprocess a source file
+src/sources/CBullet.cpp.i:
+	$(MAKE) -f CMakeFiles/TowerDefence.dir/build.make CMakeFiles/TowerDefence.dir/src/sources/CBullet.cpp.i
+.PHONY : src/sources/CBullet.cpp.i
+
+src/sources/CBullet.s: src/sources/CBullet.cpp.s
+
+.PHONY : src/sources/CBullet.s
+
+# target to generate assembly for a file
+src/sources/CBullet.cpp.s:
+	$(MAKE) -f CMakeFiles/TowerDefence.dir/build.make CMakeFiles/TowerDefence.dir/src/sources/CBullet.cpp.s
+.PHONY : src/sources/CBullet.cpp.s
+
 src/sources/CEnemiesGenerator.o: src/sources/CEnemiesGenerator.cpp.o
 
 .PHONY : src/sources/CEnemiesGenerator.o
@@ -324,6 +351,9 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/sources/CBullet.o"
+	@echo "... src/sources/CBullet.i"
+	@echo "... src/sources/CBullet.s"
 	@echo "... src/sources/CEnemiesGenerator.o"
 	@echo "... src/sources/CEnemiesGenerator.i"
 	@echo "... src/sources/CEnemiesGenerator.s"

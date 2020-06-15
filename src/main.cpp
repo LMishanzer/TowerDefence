@@ -1,4 +1,5 @@
 #include <ncurses.h>
+#include <sstream>
 #include "headers/CMap.h"
 #include "headers/CRoute.h"
 #include "headers/CEnemiesGenerator.h"
@@ -15,8 +16,16 @@ bool isInterrupted;
 int totalSpeed;
 int iterCounter;
 
+// number of enemies types
+int CEnemiesGenerator::TypesCount = 2;
+
+
+/**
+ * setup before game is started
+ */
 void Setup()
 {
+    srand(time(0));
     initscr();
     noecho();
     halfdelay(1);
@@ -27,12 +36,22 @@ void Setup()
 
     map = new CMap();
     level = new CLevel();
+
     generator = new CEnemiesGenerator();
-    map->LoadMap("src/templates/maps/map01.txt");
+
+    int mapNumber = rand() % 2 + 1;
+    ostringstream path;
+    path << "src/templates/maps/map0" << mapNumber;
+
+    map->LoadMap(path.str());
+
     CRoute route(*map);
-    map->SetWay(route.GetWay(), route.GetWayLength());
+    map->SetWay(route.GetWay());
 }
 
+/**
+ * draws field and information about game
+ */
 void Draw()
 {
     map->Print();
@@ -42,6 +61,9 @@ void Draw()
     printw("Press X to escape\n");
 }
 
+/**
+ * reads input from the player
+ */
 void Input()
 {
     CTower * tower;
@@ -78,6 +100,9 @@ void Input()
     }
 }
 
+/**
+ * realisation of game logic
+ */
 void Logic()
 {
     if (iterCounter == totalSpeed) {
@@ -91,7 +116,7 @@ void Logic()
     }
     iterCounter++;
 
-    map->CompileEnemies();
+    map->Render();
 }
 
 int main() {

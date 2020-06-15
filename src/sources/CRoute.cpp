@@ -3,20 +3,20 @@
 #include <iomanip>
 
 CRoute::CRoute(CMap &map) {
-    m_Start = map.m_Start;
-    m_Finish = map.m_Finish;
-    m_Width = map.m_Width;
-    m_Height = map.m_Height;
+    m_Start = map.GetStart();
+    m_Finish = map.GetFinish();
+    m_Width = map.GetWidth();
+    m_Height = map.GetHeight();
     m_WayLength = 0;
-    m_RouteMap = new int*[map.m_Height];
+    m_RouteMap = new int*[m_Height];
 
     for (int i = 0; i < m_Height; i++){
         m_RouteMap[i] = new int[m_Width];
-        for (int j = 0; j < map.m_Width; j++){
-            if (map.m_Field[i][j] == '#' || map.m_Field[i][j] == '<' || map.m_Field[i][j] == '>'
-                || map.m_Field[i][j] == '|' || map.m_Field[i][j] == '^')
+        for (int j = 0; j < m_Width; j++){
+            if (map.GetField()[i][j] == '#' || map.GetField()[i][j] == '<' || map.GetField()[i][j] == '>'
+                || map.GetField()[i][j] == '|' || map.GetField()[i][j] == '^')
                 m_RouteMap[i][j] = -10;
-            if (map.m_Field[i][j] == ' ')
+            if (map.GetField()[i][j] == ' ')
                 m_RouteMap[i][j] = -1;
         }
     }
@@ -79,29 +79,11 @@ void CRoute::SaveWay() {
     }
 }
 
-void CRoute::Print() {
-    for (int i = 0; i < m_Height; i++){
-        for (int j = 0; j < m_Width; j++)
-            if (m_RouteMap[i][j] == -10)
-                cout << setw(2) << '#';
-            else if (m_RouteMap[i][j] == -1)
-                cout << setw(2) << ' ';
-            else
-                cout << setw(2) << m_RouteMap[i][j];
-        cout << endl;
-    }
-    cout << endl;
-}
-
 CCoords * CRoute::GetWay() const {
     if (m_Way) {
         return m_Way;
     }
     return nullptr;
-}
-
-int CRoute::GetWayLength() const {
-    return m_WayLength;
 }
 
 CRoute::~CRoute() {

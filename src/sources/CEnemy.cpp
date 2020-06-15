@@ -3,19 +3,10 @@
 
 using namespace std;
 
-CEnemy::CEnemy(char mark, int hp) {
+CEnemy::CEnemy(char mark, int hp) : CGameObject(){
     m_Mark = mark;
     m_MaxHealth = hp;
     m_CurrentHealth = m_MaxHealth;
-    m_Iteration = 0;
-}
-
-CCoords CEnemy::GetPosition() const {
-    return m_Pos;
-}
-
-void CEnemy::SetPosition(CCoords pos) {
-    m_Pos = pos;
 }
 
 char CEnemy::GetMark() const {
@@ -28,4 +19,8 @@ void CEnemy::Hit(int damage) {
 
 bool CEnemy::IsDead() const {
     return m_CurrentHealth <= 0;
+}
+
+int CEnemy::GetIteration() const {
+    return m_Iteration;
 }

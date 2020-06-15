@@ -6,6 +6,8 @@
 
 class CEnemiesGenerator {
 public:
+    static int TypesCount;
+
     CEnemiesGenerator();
     CEnemy * GenerateEnemy();
     void GetLevel(int level);
@@ -17,6 +19,7 @@ private:
     int m_Level;
     int m_CurrentSeqLength;
     int m_IterCounter;
+    int m_CurrentType;
 };
 
 

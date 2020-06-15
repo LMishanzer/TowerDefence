@@ -3,7 +3,7 @@
 
 using namespace std;
 
-CTower::CTower(char mark) {
+CTower::CTower(char mark) : CGameObject() {
     m_Mark = mark;
     ifstream file;
 
@@ -25,18 +25,14 @@ char CTower::GetMark() const {
     return m_Mark;
 }
 
-CCoords CTower::GetPosition() const {
-    return m_Pos;
-}
-
-void CTower::SetPosition(CCoords pos) {
-    m_Pos = pos;
-}
-
 int CTower::GetDamage() const {
     return m_Damage;
 }
 
 int CTower::GetRange() const {
     return m_Range;
+}
+
+bool CTower::IsShoot() const {
+    return m_Iteration
 }

@@ -18,7 +18,6 @@ CMap::CMap() {
     m_Enemies = nullptr;
     m_Towers = nullptr;
     m_Way = nullptr;
-    m_WayLength = 0;
     m_PassedEnemies = 0;
     m_KilledEnemies = 0;
 }
@@ -73,10 +72,12 @@ bool CMap::LoadMap(const string& path) {
     return true;
 }
 
-void CMap::CompileEnemies() const {
+void CMap::Render() const {
     for (int i = 0; i < m_Height; i++){
         for (int j = 0; j < m_Width; j++){
-            if (m_Field[i][j] == '@'){
+            if (m_Field[i][j] != '#' && !(m_Field[i][j] >= '1' && m_Field[i][j] <= '9')
+            && !(m_Field[i][j] >= 'A' && m_Field[i][j] <= 'Z') && m_Field[i][j] != '>'
+            && m_Field[i][j] != '<' && m_Field[i][j] != '^' && m_Field[i][j] != '|'){
                 m_Field[i][j] = ' ';
             }
         }
@@ -89,6 +90,7 @@ void CMap::CompileEnemies() const {
 
     for (int i = 0; i < m_TowersCount; i++) {
         m_Field[m_Towers[i]->GetPosition().y][m_Towers[i]->GetPosition().x] = m_Towers[i]->GetMark();
+        m_Towers[i]->IncrementIterator();
     }
 }
 
@@ -96,7 +98,6 @@ void CMap::AddEnemy(CEnemy *enemy) {
     if (m_EnemyCount == m_MaxEnemiesCount || enemy == nullptr)
         return;
     m_Enemies[m_EnemyCount] = enemy;
-    enemy->m_Iteration = 0;
     enemy->SetPosition(m_Start);
     m_EnemyCount++;
     if (m_EnemyCount == m_MaxEnemiesCount)
@@ -107,8 +108,6 @@ void CMap::MoveEnemies() {
     for (int i = 0; i < m_TowersCount; i++){
         for (int j = 0; j < m_MaxEnemiesCount; j++){
             if (m_Enemies[j]){
-//                printw("%d\n", m_Towers[i]->GetRange());
-//                usleep(1000000);
                 if (abs(m_Towers[i]->GetPosition().y - m_Enemies[j]->GetPosition().y) <= m_Towers[i]->GetRange()
                 && abs(m_Towers[i]->GetPosition().x - m_Enemies[j]->GetPosition().x) <= m_Towers[i]->GetRange()){
                     m_Enemies[j]->Hit(m_Towers[i]->GetDamage());
@@ -130,8 +129,8 @@ void CMap::MoveEnemies() {
                 m_PassedEnemies++;
             }
             else {
-                m_Enemies[i]->m_Iteration++;
-                m_Enemies[i]->SetPosition(m_Way[m_Enemies[i]->m_Iteration]);
+                m_Enemies[i]->IncrementIterator();
+                m_Enemies[i]->SetPosition(m_Way[m_Enemies[i]->GetIteration()]);
             }
         }
     }
@@ -162,9 +161,8 @@ bool CMap::IsOver() const {
     return m_PassedEnemies == 7;
 }
 
-void CMap::SetWay(CCoords *way, int length) {
+void CMap::SetWay(CCoords *way) {
     m_Way = way;
-    m_WayLength = length;
 }
 
 bool CMap::AddTower(CTower *tower, int number) {
@@ -186,4 +184,24 @@ bool CMap::AddTower(CTower *tower, int number) {
         return true;
     }
     return false;
+}
+
+int CMap::GetWidth() const {
+    return m_Width;
+}
+
+int CMap::GetHeight() const {
+    return m_Height;
+}
+
+CCoords CMap::GetStart() const {
+    return m_Start;
+}
+
+CCoords CMap::GetFinish() const {
+    return m_Finish;
+}
+
+char ** CMap::GetField() const {
+    return m_Field;
 }

@@ -97,6 +97,9 @@
 		<Unit filename="/home/mike/PA2/TowerDefence/src/headers/CMap.h">
 			<Option target="TowerDefence"/>
 		</Unit>
+		<Unit filename="/home/mike/PA2/TowerDefence/src/headers/CMovingObject.h">
+			<Option target="TowerDefence"/>
+		</Unit>
 		<Unit filename="/home/mike/PA2/TowerDefence/src/headers/CRoute.h">
 			<Option target="TowerDefence"/>
 		</Unit>
@@ -107,6 +110,9 @@
 			<Option target="TowerDefence"/>
 		</Unit>
 		<Unit filename="/home/mike/PA2/TowerDefence/src/main.cpp">
+			<Option target="TowerDefence"/>
+		</Unit>
+		<Unit filename="/home/mike/PA2/TowerDefence/src/sources/CBullet.cpp">
 			<Option target="TowerDefence"/>
 		</Unit>
 		<Unit filename="/home/mike/PA2/TowerDefence/src/sources/CEnemiesGenerator.cpp">

@@ -1,6 +1,8 @@
 #include "../headers/CEnemiesGenerator.h"
 #include "../headers/CEnemy.h"
 #include <random>
+#include <sstream>
+#include <fstream>
 
 using namespace std;
 
@@ -15,6 +17,8 @@ CEnemiesGenerator::CEnemiesGenerator() {
 //    CEnemy::m_Speed = 10;
 
     srand(time(nullptr));
+
+    m_CurrentType = rand() % TypesCount + 1;
 }
 
 void CEnemiesGenerator::GetLevel(int level) {
@@ -31,7 +35,15 @@ void CEnemiesGenerator::GetLevel(int level) {
 
 CEnemy * CEnemiesGenerator::GenerateEnemy() {
     if (m_EnemiesInSeq < m_CurrentSeqLength){
-        auto * enemy = new CEnemy('@', 10);
+        ostringstream path;
+        path << "src/templates/enemies/enemy0" << m_CurrentType;
+        ifstream file;
+        file.open(path.str());
+        char mark;
+        int hp;
+        file >> mark;
+        file >> hp;
+        auto * enemy = new CEnemy(mark, hp);
         m_EnemiesInSeq++;
         return enemy;
     }
@@ -41,6 +53,7 @@ CEnemy * CEnemiesGenerator::GenerateEnemy() {
         while (m_CurrentSeqLength < m_MaxLength / 2){
             m_CurrentSeqLength = rand() % m_MaxLength;
         }
+        m_CurrentType = rand() % TypesCount + 1;
     }
     return nullptr;
 }

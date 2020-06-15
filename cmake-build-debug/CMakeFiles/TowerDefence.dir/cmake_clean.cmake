@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/TowerDefence.dir/src/main.cpp.o"
+  "CMakeFiles/TowerDefence.dir/src/sources/CBullet.cpp.o"
   "CMakeFiles/TowerDefence.dir/src/sources/CEnemiesGenerator.cpp.o"
   "CMakeFiles/TowerDefence.dir/src/sources/CEnemy.cpp.o"
   "CMakeFiles/TowerDefence.dir/src/sources/CLevel.cpp.o"
