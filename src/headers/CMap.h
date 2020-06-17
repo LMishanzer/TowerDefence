@@ -1,6 +1,8 @@
 #include "CEnemy.h"
 #include "CTower.h"
+#include "CBullet.h"
 #include <string>
+#include <list>
 
 #ifndef TOWERDEFENCE_MAP_H
 #define TOWERDEFENCE_MAP_H
@@ -11,6 +13,7 @@ class CMap {
 public:
     CMap();
     void MoveEnemies();
+    void MoveBullets();
     bool LoadMap(const string& path);
     void Render() const;
     void AddEnemy(CEnemy * enemy);
@@ -35,13 +38,20 @@ private:
 
     int m_MaxEnemiesCount;
     int m_EnemyCount;
-    int m_MaxTowersCount;
-    int m_TowersCount;
     CEnemy ** m_Enemies;
-    CTower ** m_Towers;
-    CCoords * m_Way;
     int m_PassedEnemies;
     int m_KilledEnemies;
+
+    int m_MaxTowersCount;
+    int m_TowersCount;
+    CTower ** m_Towers;
+
+    CCoords * m_Way;
+
+    int m_BulletCount;
+    CBullet ** m_Bullets;
+
+    void Shoot();
 };
 
 

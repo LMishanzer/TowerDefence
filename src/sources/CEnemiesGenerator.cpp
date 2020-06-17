@@ -25,7 +25,7 @@ void CEnemiesGenerator::GetLevel(int level) {
     if (m_Level != level) {
         m_Level = level;
         m_MaxLength = level * 5;
-        m_Freq = 50;
+        m_Freq = 20;
     }
     m_IterCounter++;
     if (m_IterCounter == m_Freq){

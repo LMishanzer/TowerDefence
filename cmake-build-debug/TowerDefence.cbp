@@ -91,13 +91,13 @@
 		<Unit filename="/home/mike/PA2/TowerDefence/src/headers/CEnemy.h">
 			<Option target="TowerDefence"/>
 		</Unit>
+		<Unit filename="/home/mike/PA2/TowerDefence/src/headers/CGameObject.h">
+			<Option target="TowerDefence"/>
+		</Unit>
 		<Unit filename="/home/mike/PA2/TowerDefence/src/headers/CLevel.h">
 			<Option target="TowerDefence"/>
 		</Unit>
 		<Unit filename="/home/mike/PA2/TowerDefence/src/headers/CMap.h">
-			<Option target="TowerDefence"/>
-		</Unit>
-		<Unit filename="/home/mike/PA2/TowerDefence/src/headers/CMovingObject.h">
 			<Option target="TowerDefence"/>
 		</Unit>
 		<Unit filename="/home/mike/PA2/TowerDefence/src/headers/CRoute.h">

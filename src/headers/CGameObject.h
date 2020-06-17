@@ -18,11 +18,16 @@ public:
         return m_Pos;
     }
 
-    void IncrementIterator(){
+    char GetMark() const{
+        return m_Mark;
+    }
+
+    virtual void IncrementIterator(){
         m_Iteration++;
     }
 
 protected:
+    char m_Mark;
     CCoords m_Pos{};
     int m_Iteration;
 };

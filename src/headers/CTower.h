@@ -9,18 +9,15 @@
 class CTower : public CGameObject {
 public:
     CTower(char mark);
-    char GetMark() const;
     int GetRange() const;
     int GetDamage() const;
-    bool IsShoot() const;
-    CBullet * Shoot() const;
+//    bool IsShoot() const;
+    CBullet * Shoot(char ** field, int width, int height, CCoords target);
 
 private:
     int m_Damage;
     int m_Range;
     int m_FireRate;
-    char m_Mark;
-
 };
 
 

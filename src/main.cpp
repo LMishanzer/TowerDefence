@@ -31,7 +31,7 @@ void Setup()
     halfdelay(1);
     isOver = false;
     isInterrupted = false;
-    totalSpeed = 2;
+    totalSpeed = 5;
     iterCounter = 0;
 
     map = new CMap();
@@ -116,6 +116,7 @@ void Logic()
     }
     iterCounter++;
 
+    map->MoveBullets();
     map->Render();
 }
 

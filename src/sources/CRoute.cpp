@@ -27,6 +27,33 @@ CRoute::CRoute(CMap &map) {
     SaveWay();
 }
 
+CRoute::CRoute(char **field, int width, int height, CCoords start, CCoords finish) {
+    m_Start = start;
+    m_Finish = finish;
+    m_Width = width;
+    m_Height = height;
+    m_WayLength = 0;
+    m_RouteMap = new int*[m_Height];
+
+    for (int i = 0; i < m_Height; i++){
+        m_RouteMap[i] = new int[m_Width];
+        for (int j = 0; j < m_Width; j++){
+            if (field[i][j] == '#' || field[i][j] == '<' || field[i][j] == '>'
+                || field[i][j] == '|' || field[i][j] == '^' //|| (field[i][j] >= 'A' && field[i][j] <= 'Z')
+                || (field[i][j] >= '1' && field[i][j] <= '9'))
+                m_RouteMap[i][j] = -10;
+            else
+                m_RouteMap[i][j] = -1;
+        }
+    }
+    m_RouteMap[m_Finish.y][m_Finish.x] = 0;
+
+
+    Build(m_Finish);
+
+    SaveWay();
+}
+
 void CRoute::Build(CCoords current) {
     if (current == m_Start)
         return;
@@ -58,6 +85,7 @@ void CRoute::Build(CCoords current) {
 
 void CRoute::SaveWay() {
     m_WayLength = m_RouteMap[m_Start.y][m_Start.x] + 1;
+//    printw("%d\n", m_WayLength);
     m_Way = new CCoords[m_WayLength];
 
     CCoords current = m_Start;
@@ -84,6 +112,10 @@ CCoords * CRoute::GetWay() const {
         return m_Way;
     }
     return nullptr;
+}
+
+int CRoute::GetLength() const {
+    return m_WayLength;
 }
 
 CRoute::~CRoute() {

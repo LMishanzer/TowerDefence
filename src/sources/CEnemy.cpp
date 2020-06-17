@@ -9,10 +9,6 @@ CEnemy::CEnemy(char mark, int hp) : CGameObject(){
     m_CurrentHealth = m_MaxHealth;
 }
 
-char CEnemy::GetMark() const {
-    return m_Mark;
-}
-
 void CEnemy::Hit(int damage) {
     m_CurrentHealth -= damage;
 }

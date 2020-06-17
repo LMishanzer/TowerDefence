@@ -1,4 +1,5 @@
 #include "../headers/CMap.h"
+#include "../headers/CCoords.h"
 #include <iostream>
 #include <fstream>
 #include <ncurses.h>
@@ -20,6 +21,8 @@ CMap::CMap() {
     m_Way = nullptr;
     m_PassedEnemies = 0;
     m_KilledEnemies = 0;
+    m_Bullets = nullptr;
+    m_BulletCount = 0;
 }
 
 void CMap::Print() const {
@@ -55,8 +58,10 @@ bool CMap::LoadMap(const string& path) {
     }
 
     m_Enemies = new CEnemy*[m_MaxEnemiesCount];
+    m_Bullets = new CBullet*[m_MaxEnemiesCount];
     for (int i = 0; i < m_MaxEnemiesCount; i++){
         m_Enemies[i] = nullptr;
+        m_Bullets[i] = nullptr;
     }
 
     m_Field = new char*[m_Height];
@@ -86,6 +91,9 @@ void CMap::Render() const {
     for (int i = 0; i < m_MaxEnemiesCount; i++) {
         if (m_Enemies[i])
             m_Field[m_Enemies[i]->GetPosition().y][m_Enemies[i]->GetPosition().x] = m_Enemies[i]->GetMark();
+        if (m_Bullets[i]){
+            m_Field[m_Bullets[i]->GetPosition().y][m_Bullets[i]->GetPosition().x] = m_Bullets[i]->GetMark();
+        }
     }
 
     for (int i = 0; i < m_TowersCount; i++) {
@@ -104,23 +112,27 @@ void CMap::AddEnemy(CEnemy *enemy) {
         m_EnemyCount = 0;
 }
 
-void CMap::MoveEnemies() {
+void CMap::Shoot() {
     for (int i = 0; i < m_TowersCount; i++){
         for (int j = 0; j < m_MaxEnemiesCount; j++){
             if (m_Enemies[j]){
                 if (abs(m_Towers[i]->GetPosition().y - m_Enemies[j]->GetPosition().y) <= m_Towers[i]->GetRange()
                 && abs(m_Towers[i]->GetPosition().x - m_Enemies[j]->GetPosition().x) <= m_Towers[i]->GetRange()){
-                    m_Enemies[j]->Hit(m_Towers[i]->GetDamage());
-                    if (m_Enemies[j]->IsDead()){
-                        delete m_Enemies[j];
-                        m_Enemies[j] = nullptr;
-                        m_KilledEnemies++;
+                    m_Bullets[m_BulletCount] = m_Towers[i]->Shoot(m_Field, m_Width, m_Height,
+                            m_Enemies[j]->GetPosition());
+                    m_BulletCount++;
+
+                    if (m_BulletCount == m_MaxEnemiesCount){
+                        m_BulletCount = 0;
                     }
+                    break;
                 }
             }
         }
     }
+}
 
+void CMap::MoveEnemies() {
     for (int i = 0; i < m_MaxEnemiesCount; i++) {
         if (m_Enemies[i]) {
             if (m_Enemies[i]->GetPosition() == m_Finish) {
@@ -134,6 +146,40 @@ void CMap::MoveEnemies() {
             }
         }
     }
+
+    Shoot();
+}
+
+void CMap::MoveBullets() {
+    if (m_Bullets) {
+        for (int i = 0; i < m_MaxEnemiesCount; i++) {
+            if (m_Bullets[i]) {
+                m_Bullets[i]->IncrementIterator();
+
+                if (m_Bullets[i]->IsEnd()){
+                    bool flag = false;
+                    for (int j = 0; j < m_MaxEnemiesCount; j++){
+                        if (m_Enemies[j])
+                            if (m_Enemies[j]->GetPosition() == m_Bullets[i]->GetPosition()){
+                                m_Enemies[j]->Hit(m_Bullets[i]->Damage());
+                                if (m_Enemies[j]->IsDead()){
+                                    delete m_Enemies[j];
+                                    m_Enemies[j] = nullptr;
+                                    m_KilledEnemies++;
+                                }
+                                flag = true;
+                                break;
+                            }
+                    }
+                    if (!flag)
+                        throw exception();
+
+                    delete m_Bullets[i];
+                    m_Bullets[i] = nullptr;
+                }
+            }
+        }
+    }
 }
 
 CMap::~CMap() {
@@ -143,15 +189,19 @@ CMap::~CMap() {
     }
     delete [] m_Field;
 
-    for (int i = 0; i < m_MaxEnemiesCount; i++)
-        if (m_Enemies[i]){
+    for (int i = 0; i < m_MaxEnemiesCount; i++) {
+        if (m_Enemies[i])
             delete m_Enemies[i];
-        }
+        if (m_Bullets[i])
+            delete m_Bullets[i];
+    }
 
-    for (int i = 0; i < m_MaxTowersCount; i++)
+    for (int i = 0; i < m_MaxTowersCount; i++) {
         if (m_Towers[i])
             delete m_Towers[i];
+    }
 
+    delete [] m_Bullets;
     delete [] m_Towers;
     delete [] m_Enemies;
     delete [] m_Way;

@@ -1,15 +1,15 @@
 #ifndef TOWERDEFENCE_CCOORDS_H
 #define TOWERDEFENCE_CCOORDS_H
 
-struct CCoords{
+class CCoords{
 public:
     int y, x;
 
-    bool operator==(CCoords &coords) const {
+    bool operator==(CCoords coords) const {
         return x == coords.x && y == coords.y;
     }
 
-    bool operator!=(CCoords &coords) const {
+    bool operator!=(CCoords coords) const {
         return x != coords.x || y != coords.y;
     }
 };

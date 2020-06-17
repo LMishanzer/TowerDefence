@@ -1,5 +1,6 @@
 #include <fstream>
 #include "../headers/CTower.h"
+#include "../headers/CRoute.h"
 
 using namespace std;
 
@@ -21,10 +22,6 @@ CTower::CTower(char mark) : CGameObject() {
     file.close();
 }
 
-char CTower::GetMark() const {
-    return m_Mark;
-}
-
 int CTower::GetDamage() const {
     return m_Damage;
 }
@@ -33,6 +30,9 @@ int CTower::GetRange() const {
     return m_Range;
 }
 
-bool CTower::IsShoot() const {
-    return m_Iteration
+CBullet * CTower::Shoot(char ** field, int width, int height, CCoords target) {
+    CRoute route(field, width, height, m_Pos, target);
+    auto * bullet = new CBullet(route.GetWay(), route.GetLength(), m_Damage);
+    bullet->SetPosition(m_Pos);
+    return bullet;
 }
