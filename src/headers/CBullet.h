@@ -1,24 +1,26 @@
 #include "CCoords.h"
-#include "CGameObject.h"
+#include "CMovingObject.h"
 #include "CEnemy.h"
 
 #ifndef TOWERDEFENCE_CBULLET_H
 #define TOWERDEFENCE_CBULLET_H
 
-
-class CBullet : public CGameObject {
+// class for keeping info about bullets
+class CBullet : public CMovingObject {
 public:
+    /**
+     * create a bullet with it's own way and damage
+     * @param way : way of the bullet
+     * @param length : length of the way
+     * @param damage : damage of the bullet
+     */
     explicit CBullet(CCoords * way, int length, int damage);
-    bool IsEnd() const;
-    int Damage() const;
-    void IncrementIterator() override;
-    ~CBullet();
+
+    int Damage() const;                 // returns damage value
+    ~CBullet() override;
 
 private:
     int m_Damage;
-    CCoords m_Target{};
-    CCoords * m_Way;
-    int m_WayLength;
 };
 
 

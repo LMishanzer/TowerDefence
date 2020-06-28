@@ -1,8 +1,25 @@
-//
-// Created by mike on 18.06.20.
-//
+#include <unistd.h>
+#include <ncurses.h>
 
-#ifndef TOWERDEFENCE_WINNER_H
-#define TOWERDEFENCE_WINNER_H
-
-#endif //TOWERDEFENCE_WINNER_H
+// winner label
+void Winner(){
+    move(0, 0);
+    printw(" ##                ##  ##   ##        ##  ##        ##  #########   ######  \n");
+    refresh();
+    usleep(100000);
+    printw("  ##       ##      ##  ##   ## ##     ##  ## ##     ##  ##          ##     ##\n");
+    refresh();
+    usleep(100000);
+    printw("   ##              ##  ##   ##  ##    ##  ##  ##    ##  ######      ##     ##\n");
+    refresh();
+    usleep(100000);
+    printw("    ##    ##  ##   ##  ##   ##   ##   ##  ##   ##   ##  ##          ## ##\n");
+    refresh();
+    usleep(100000);
+    printw("     ##  ##    ##  ##  ##   ##    ##  ##  ##    ##  ##   ##         ##   ##\n");
+    refresh();
+    usleep(100000);
+    printw("      ###       ##     ##   ##        ##  ##        ##  #########   ##      ##\n");
+    refresh();
+    usleep(4000000);
+}

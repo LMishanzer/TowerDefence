@@ -1,9 +1,10 @@
 #include "../headers/CLevel.h"
 
-CLevel::CLevel() {
+CLevel::CLevel(int iterations, int toWin) {
     m_Level = 1;
     m_IterCount = 0;
-    m_IterToNext = 500;
+    m_IterToNext = iterations;
+    m_LevelsToWin = toWin;
 }
 
 void CLevel::Next() {
@@ -18,10 +19,10 @@ bool CLevel::IsNextLevel() const {
     return m_IterCount != 0 && m_IterCount % m_IterToNext == 0;
 }
 
-int & CLevel::CurrentLevel() {
+int CLevel::CurrentLevel() const {
     return m_Level;
 }
 
-void CLevel::SetIterCount(int count) {
-    m_IterToNext = count;
+bool CLevel::IsWinner() const {
+    return m_Level == m_LevelsToWin;
 }

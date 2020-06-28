@@ -161,6 +161,32 @@ CMakeFiles/TowerDefence.dir/src/sources/CBullet.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TowerDefence.dir/src/sources/CBullet.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mike/PA2/TowerDefence/src/sources/CBullet.cpp -o CMakeFiles/TowerDefence.dir/src/sources/CBullet.cpp.s
 
+CMakeFiles/TowerDefence.dir/src/sources/CWallet.cpp.o: CMakeFiles/TowerDefence.dir/flags.make
+CMakeFiles/TowerDefence.dir/src/sources/CWallet.cpp.o: ../src/sources/CWallet.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mike/PA2/TowerDefence/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/TowerDefence.dir/src/sources/CWallet.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TowerDefence.dir/src/sources/CWallet.cpp.o -c /home/mike/PA2/TowerDefence/src/sources/CWallet.cpp
+
+CMakeFiles/TowerDefence.dir/src/sources/CWallet.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TowerDefence.dir/src/sources/CWallet.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mike/PA2/TowerDefence/src/sources/CWallet.cpp > CMakeFiles/TowerDefence.dir/src/sources/CWallet.cpp.i
+
+CMakeFiles/TowerDefence.dir/src/sources/CWallet.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TowerDefence.dir/src/sources/CWallet.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mike/PA2/TowerDefence/src/sources/CWallet.cpp -o CMakeFiles/TowerDefence.dir/src/sources/CWallet.cpp.s
+
+CMakeFiles/TowerDefence.dir/src/sources/CCrazyEnemy.cpp.o: CMakeFiles/TowerDefence.dir/flags.make
+CMakeFiles/TowerDefence.dir/src/sources/CCrazyEnemy.cpp.o: ../src/sources/CCrazyEnemy.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mike/PA2/TowerDefence/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/TowerDefence.dir/src/sources/CCrazyEnemy.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TowerDefence.dir/src/sources/CCrazyEnemy.cpp.o -c /home/mike/PA2/TowerDefence/src/sources/CCrazyEnemy.cpp
+
+CMakeFiles/TowerDefence.dir/src/sources/CCrazyEnemy.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TowerDefence.dir/src/sources/CCrazyEnemy.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mike/PA2/TowerDefence/src/sources/CCrazyEnemy.cpp > CMakeFiles/TowerDefence.dir/src/sources/CCrazyEnemy.cpp.i
+
+CMakeFiles/TowerDefence.dir/src/sources/CCrazyEnemy.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TowerDefence.dir/src/sources/CCrazyEnemy.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mike/PA2/TowerDefence/src/sources/CCrazyEnemy.cpp -o CMakeFiles/TowerDefence.dir/src/sources/CCrazyEnemy.cpp.s
+
 # Object files for target TowerDefence
 TowerDefence_OBJECTS = \
 "CMakeFiles/TowerDefence.dir/src/main.cpp.o" \
@@ -170,7 +196,9 @@ TowerDefence_OBJECTS = \
 "CMakeFiles/TowerDefence.dir/src/sources/CEnemiesGenerator.cpp.o" \
 "CMakeFiles/TowerDefence.dir/src/sources/CLevel.cpp.o" \
 "CMakeFiles/TowerDefence.dir/src/sources/CTower.cpp.o" \
-"CMakeFiles/TowerDefence.dir/src/sources/CBullet.cpp.o"
+"CMakeFiles/TowerDefence.dir/src/sources/CBullet.cpp.o" \
+"CMakeFiles/TowerDefence.dir/src/sources/CWallet.cpp.o" \
+"CMakeFiles/TowerDefence.dir/src/sources/CCrazyEnemy.cpp.o"
 
 # External object files for target TowerDefence
 TowerDefence_EXTERNAL_OBJECTS =
@@ -183,9 +211,11 @@ TowerDefence: CMakeFiles/TowerDefence.dir/src/sources/CEnemiesGenerator.cpp.o
 TowerDefence: CMakeFiles/TowerDefence.dir/src/sources/CLevel.cpp.o
 TowerDefence: CMakeFiles/TowerDefence.dir/src/sources/CTower.cpp.o
 TowerDefence: CMakeFiles/TowerDefence.dir/src/sources/CBullet.cpp.o
+TowerDefence: CMakeFiles/TowerDefence.dir/src/sources/CWallet.cpp.o
+TowerDefence: CMakeFiles/TowerDefence.dir/src/sources/CCrazyEnemy.cpp.o
 TowerDefence: CMakeFiles/TowerDefence.dir/build.make
 TowerDefence: CMakeFiles/TowerDefence.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/mike/PA2/TowerDefence/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable TowerDefence"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/mike/PA2/TowerDefence/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable TowerDefence"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/TowerDefence.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

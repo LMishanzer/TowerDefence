@@ -1,14 +1,12 @@
 #include "CCoords.h"
 
-#ifndef TOWERDEFENCE_CMOVINGOBJECT_H
-#define TOWERDEFENCE_CMOVINGOBJECT_H
+#ifndef TOWERDEFENCE_CGAMEOBJECT_H
+#define TOWERDEFENCE_CGAMEOBJECT_H
 
-
+// class for moving objects in the game (enemies, towers, bullets)
 class CGameObject{
 public:
-    CGameObject(){
-        m_Iteration = 0;
-    }
+    CGameObject() = default;
 
     void SetPosition(CCoords pos){
         m_Pos = pos;
@@ -22,15 +20,10 @@ public:
         return m_Mark;
     }
 
-    virtual void IncrementIterator(){
-        m_Iteration++;
-    }
-
 protected:
-    char m_Mark;
-    CCoords m_Pos{};
-    int m_Iteration;
+    char m_Mark;        // marking (for example enemies can mark @)
+    CCoords m_Pos{};    // current position on the map
 };
 
 
-#endif //TOWERDEFENCE_CMOVINGOBJECT_H
+#endif //TOWERDEFENCE_CGAMEOBJECT_H

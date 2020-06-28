@@ -1,6 +1,9 @@
 #ifndef TOWERDEFENCE_CCOORDS_H
 #define TOWERDEFENCE_CCOORDS_H
 
+/**
+ * instances of this class will keep position on the map
+ */
 class CCoords{
 public:
     int y, x;

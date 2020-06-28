@@ -6,13 +6,31 @@
 
 #IncludeRegexTransform: 
 
+/home/mike/PA2/TowerDefence/src/headers/CBullet.h
+CCoords.h
 /home/mike/PA2/TowerDefence/src/headers/CCoords.h
+CMovingObject.h
+/home/mike/PA2/TowerDefence/src/headers/CMovingObject.h
+CEnemy.h
+/home/mike/PA2/TowerDefence/src/headers/CEnemy.h
+
+/home/mike/PA2/TowerDefence/src/headers/CCoords.h
+
+/home/mike/PA2/TowerDefence/src/headers/CCrazyEnemy.h
+CEnemy.h
+/home/mike/PA2/TowerDefence/src/headers/CEnemy.h
 
 /home/mike/PA2/TowerDefence/src/headers/CEnemiesGenerator.h
 CEnemy.h
 /home/mike/PA2/TowerDefence/src/headers/CEnemy.h
 
 /home/mike/PA2/TowerDefence/src/headers/CEnemy.h
+CCoords.h
+/home/mike/PA2/TowerDefence/src/headers/CCoords.h
+CMovingObject.h
+/home/mike/PA2/TowerDefence/src/headers/CMovingObject.h
+
+/home/mike/PA2/TowerDefence/src/headers/CGameObject.h
 CCoords.h
 /home/mike/PA2/TowerDefence/src/headers/CCoords.h
 
@@ -23,8 +41,18 @@ CEnemy.h
 /home/mike/PA2/TowerDefence/src/headers/CEnemy.h
 CTower.h
 /home/mike/PA2/TowerDefence/src/headers/CTower.h
+CBullet.h
+/home/mike/PA2/TowerDefence/src/headers/CBullet.h
+CWallet.h
+/home/mike/PA2/TowerDefence/src/headers/CWallet.h
 string
 -
+list
+-
+
+/home/mike/PA2/TowerDefence/src/headers/CMovingObject.h
+CGameObject.h
+/home/mike/PA2/TowerDefence/src/headers/CGameObject.h
 
 /home/mike/PA2/TowerDefence/src/headers/CRoute.h
 utility
@@ -35,10 +63,20 @@ CMap.h
 /home/mike/PA2/TowerDefence/src/headers/CTower.h
 CCoords.h
 /home/mike/PA2/TowerDefence/src/headers/CCoords.h
+CBullet.h
+/home/mike/PA2/TowerDefence/src/headers/CBullet.h
+CGameObject.h
+/home/mike/PA2/TowerDefence/src/headers/CGameObject.h
+
+/home/mike/PA2/TowerDefence/src/headers/CWallet.h
 
 /home/mike/PA2/TowerDefence/src/headers/GameOver.h
-iostream
+unistd.h
 -
+ncurses.h
+-
+
+/home/mike/PA2/TowerDefence/src/headers/Winner.h
 unistd.h
 -
 ncurses.h
@@ -46,6 +84,8 @@ ncurses.h
 
 /home/mike/PA2/TowerDefence/src/main.cpp
 ncurses.h
+-
+sstream
 -
 headers/CMap.h
 /home/mike/PA2/TowerDefence/src/headers/CMap.h
@@ -55,22 +95,40 @@ headers/CEnemiesGenerator.h
 /home/mike/PA2/TowerDefence/src/headers/CEnemiesGenerator.h
 headers/CLevel.h
 /home/mike/PA2/TowerDefence/src/headers/CLevel.h
+headers/CWallet.h
+/home/mike/PA2/TowerDefence/src/headers/CWallet.h
 headers/GameOver.h
 /home/mike/PA2/TowerDefence/src/headers/GameOver.h
+headers/Winner.h
+/home/mike/PA2/TowerDefence/src/headers/Winner.h
+
+/home/mike/PA2/TowerDefence/src/sources/CBullet.cpp
+../headers/CBullet.h
+/home/mike/PA2/TowerDefence/src/headers/CBullet.h
+
+/home/mike/PA2/TowerDefence/src/sources/CCrazyEnemy.cpp
+../headers/CCrazyEnemy.h
+/home/mike/PA2/TowerDefence/src/headers/CCrazyEnemy.h
+random
+-
 
 /home/mike/PA2/TowerDefence/src/sources/CEnemiesGenerator.cpp
 ../headers/CEnemiesGenerator.h
 /home/mike/PA2/TowerDefence/src/headers/CEnemiesGenerator.h
 ../headers/CEnemy.h
 /home/mike/PA2/TowerDefence/src/headers/CEnemy.h
+../headers/CCrazyEnemy.h
+/home/mike/PA2/TowerDefence/src/headers/CCrazyEnemy.h
 random
+-
+sstream
+-
+fstream
 -
 
 /home/mike/PA2/TowerDefence/src/sources/CEnemy.cpp
 ../headers/CEnemy.h
 /home/mike/PA2/TowerDefence/src/headers/CEnemy.h
-iostream
--
 
 /home/mike/PA2/TowerDefence/src/sources/CLevel.cpp
 ../headers/CLevel.h
@@ -79,19 +137,21 @@ iostream
 /home/mike/PA2/TowerDefence/src/sources/CMap.cpp
 ../headers/CMap.h
 /home/mike/PA2/TowerDefence/src/headers/CMap.h
+../headers/CCoords.h
+/home/mike/PA2/TowerDefence/src/headers/CCoords.h
 iostream
 -
 fstream
 -
 ncurses.h
 -
+unistd.h
+-
 
 /home/mike/PA2/TowerDefence/src/sources/CRoute.cpp
 ../headers/CRoute.h
 /home/mike/PA2/TowerDefence/src/headers/CRoute.h
-iostream
--
-iomanip
+ncurses.h
 -
 
 /home/mike/PA2/TowerDefence/src/sources/CTower.cpp
@@ -99,4 +159,10 @@ fstream
 -
 ../headers/CTower.h
 /home/mike/PA2/TowerDefence/src/headers/CTower.h
+../headers/CRoute.h
+/home/mike/PA2/TowerDefence/src/headers/CRoute.h
+
+/home/mike/PA2/TowerDefence/src/sources/CWallet.cpp
+../headers/CWallet.h
+/home/mike/PA2/TowerDefence/src/headers/CWallet.h
 

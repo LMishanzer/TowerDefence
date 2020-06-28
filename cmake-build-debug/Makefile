@@ -177,6 +177,33 @@ src/sources/CBullet.cpp.s:
 	$(MAKE) -f CMakeFiles/TowerDefence.dir/build.make CMakeFiles/TowerDefence.dir/src/sources/CBullet.cpp.s
 .PHONY : src/sources/CBullet.cpp.s
 
+src/sources/CCrazyEnemy.o: src/sources/CCrazyEnemy.cpp.o
+
+.PHONY : src/sources/CCrazyEnemy.o
+
+# target to build an object file
+src/sources/CCrazyEnemy.cpp.o:
+	$(MAKE) -f CMakeFiles/TowerDefence.dir/build.make CMakeFiles/TowerDefence.dir/src/sources/CCrazyEnemy.cpp.o
+.PHONY : src/sources/CCrazyEnemy.cpp.o
+
+src/sources/CCrazyEnemy.i: src/sources/CCrazyEnemy.cpp.i
+
+.PHONY : src/sources/CCrazyEnemy.i
+
+# target to preprocess a source file
+src/sources/CCrazyEnemy.cpp.i:
+	$(MAKE) -f CMakeFiles/TowerDefence.dir/build.make CMakeFiles/TowerDefence.dir/src/sources/CCrazyEnemy.cpp.i
+.PHONY : src/sources/CCrazyEnemy.cpp.i
+
+src/sources/CCrazyEnemy.s: src/sources/CCrazyEnemy.cpp.s
+
+.PHONY : src/sources/CCrazyEnemy.s
+
+# target to generate assembly for a file
+src/sources/CCrazyEnemy.cpp.s:
+	$(MAKE) -f CMakeFiles/TowerDefence.dir/build.make CMakeFiles/TowerDefence.dir/src/sources/CCrazyEnemy.cpp.s
+.PHONY : src/sources/CCrazyEnemy.cpp.s
+
 src/sources/CEnemiesGenerator.o: src/sources/CEnemiesGenerator.cpp.o
 
 .PHONY : src/sources/CEnemiesGenerator.o
@@ -339,6 +366,33 @@ src/sources/CTower.cpp.s:
 	$(MAKE) -f CMakeFiles/TowerDefence.dir/build.make CMakeFiles/TowerDefence.dir/src/sources/CTower.cpp.s
 .PHONY : src/sources/CTower.cpp.s
 
+src/sources/CWallet.o: src/sources/CWallet.cpp.o
+
+.PHONY : src/sources/CWallet.o
+
+# target to build an object file
+src/sources/CWallet.cpp.o:
+	$(MAKE) -f CMakeFiles/TowerDefence.dir/build.make CMakeFiles/TowerDefence.dir/src/sources/CWallet.cpp.o
+.PHONY : src/sources/CWallet.cpp.o
+
+src/sources/CWallet.i: src/sources/CWallet.cpp.i
+
+.PHONY : src/sources/CWallet.i
+
+# target to preprocess a source file
+src/sources/CWallet.cpp.i:
+	$(MAKE) -f CMakeFiles/TowerDefence.dir/build.make CMakeFiles/TowerDefence.dir/src/sources/CWallet.cpp.i
+.PHONY : src/sources/CWallet.cpp.i
+
+src/sources/CWallet.s: src/sources/CWallet.cpp.s
+
+.PHONY : src/sources/CWallet.s
+
+# target to generate assembly for a file
+src/sources/CWallet.cpp.s:
+	$(MAKE) -f CMakeFiles/TowerDefence.dir/build.make CMakeFiles/TowerDefence.dir/src/sources/CWallet.cpp.s
+.PHONY : src/sources/CWallet.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -354,6 +408,9 @@ help:
 	@echo "... src/sources/CBullet.o"
 	@echo "... src/sources/CBullet.i"
 	@echo "... src/sources/CBullet.s"
+	@echo "... src/sources/CCrazyEnemy.o"
+	@echo "... src/sources/CCrazyEnemy.i"
+	@echo "... src/sources/CCrazyEnemy.s"
 	@echo "... src/sources/CEnemiesGenerator.o"
 	@echo "... src/sources/CEnemiesGenerator.i"
 	@echo "... src/sources/CEnemiesGenerator.s"
@@ -372,6 +429,9 @@ help:
 	@echo "... src/sources/CTower.o"
 	@echo "... src/sources/CTower.i"
 	@echo "... src/sources/CTower.s"
+	@echo "... src/sources/CWallet.o"
+	@echo "... src/sources/CWallet.i"
+	@echo "... src/sources/CWallet.s"
 .PHONY : help
 
 

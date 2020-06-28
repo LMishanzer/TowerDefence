@@ -1,9 +1,7 @@
-#include <iostream>
 #include <unistd.h>
 #include <ncurses.h>
 
-using namespace std;
-
+// game over label
 void GameOver(){
     move(0, 0);
     printw("        ###          ##       ##        ##  #########   \n");

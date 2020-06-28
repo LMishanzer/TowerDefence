@@ -85,6 +85,9 @@
 		<Unit filename="/home/mike/PA2/TowerDefence/src/headers/CBullet.h">
 			<Option target="TowerDefence"/>
 		</Unit>
+		<Unit filename="/home/mike/PA2/TowerDefence/src/headers/CCrazyEnemy.h">
+			<Option target="TowerDefence"/>
+		</Unit>
 		<Unit filename="/home/mike/PA2/TowerDefence/src/headers/CEnemiesGenerator.h">
 			<Option target="TowerDefence"/>
 		</Unit>
@@ -100,19 +103,31 @@
 		<Unit filename="/home/mike/PA2/TowerDefence/src/headers/CMap.h">
 			<Option target="TowerDefence"/>
 		</Unit>
+		<Unit filename="/home/mike/PA2/TowerDefence/src/headers/CMovingObject.h">
+			<Option target="TowerDefence"/>
+		</Unit>
 		<Unit filename="/home/mike/PA2/TowerDefence/src/headers/CRoute.h">
 			<Option target="TowerDefence"/>
 		</Unit>
 		<Unit filename="/home/mike/PA2/TowerDefence/src/headers/CTower.h">
 			<Option target="TowerDefence"/>
 		</Unit>
+		<Unit filename="/home/mike/PA2/TowerDefence/src/headers/CWallet.h">
+			<Option target="TowerDefence"/>
+		</Unit>
 		<Unit filename="/home/mike/PA2/TowerDefence/src/headers/GameOver.h">
+			<Option target="TowerDefence"/>
+		</Unit>
+		<Unit filename="/home/mike/PA2/TowerDefence/src/headers/Winner.h">
 			<Option target="TowerDefence"/>
 		</Unit>
 		<Unit filename="/home/mike/PA2/TowerDefence/src/main.cpp">
 			<Option target="TowerDefence"/>
 		</Unit>
 		<Unit filename="/home/mike/PA2/TowerDefence/src/sources/CBullet.cpp">
+			<Option target="TowerDefence"/>
+		</Unit>
+		<Unit filename="/home/mike/PA2/TowerDefence/src/sources/CCrazyEnemy.cpp">
 			<Option target="TowerDefence"/>
 		</Unit>
 		<Unit filename="/home/mike/PA2/TowerDefence/src/sources/CEnemiesGenerator.cpp">
@@ -131,6 +146,9 @@
 			<Option target="TowerDefence"/>
 		</Unit>
 		<Unit filename="/home/mike/PA2/TowerDefence/src/sources/CTower.cpp">
+			<Option target="TowerDefence"/>
+		</Unit>
+		<Unit filename="/home/mike/PA2/TowerDefence/src/sources/CWallet.cpp">
 			<Option target="TowerDefence"/>
 		</Unit>
 		<Unit filename="/home/mike/PA2/TowerDefence/CMakeLists.txt">

@@ -4,20 +4,29 @@
 #include "headers/CRoute.h"
 #include "headers/CEnemiesGenerator.h"
 #include "headers/CLevel.h"
+#include "headers/CWallet.h"
 #include "headers/GameOver.h"
+#include "headers/Winner.h"
 
 using namespace std;
 
-CMap * map;
-CLevel * level;
-CEnemiesGenerator * generator;
-bool isOver;
-bool isInterrupted;
-int totalSpeed;
-int iterCounter;
+const int iterationsToNextLevel = 100;      // iterations player needs for the next level
+const int mapsCount = 3;
+const int enemyTypesCount = 3;              // number of enemies types
+const int iterationsPerTurn = 5;            // 1 enemy move per n cycles
+const int startGold = 1500;                 // amount of gold on the start
+const int startDiamonds = 1;                // amount of diamonds on the start
+const int levelsToWin = 5;                  // levels needed to win
 
-// number of enemies types
-int CEnemiesGenerator::TypesCount = 2;
+
+CMap * map;                     // map for game
+CLevel * level;                 // current level
+CWallet * wallet;               // player's wallet
+CEnemiesGenerator * generator;  // generator of enemies
+bool isOver;                    // is game over (win or failure)
+bool isInterrupted;             // is game interrupted by user
+bool isWinner;                  // is game won
+int iterCounter;                // iteration counter (for level counting)
 
 
 /**
@@ -26,27 +35,32 @@ int CEnemiesGenerator::TypesCount = 2;
 void Setup()
 {
     srand(time(0));
+
+    // initializing game window
     initscr();
     noecho();
     halfdelay(1);
+
+    // setting up parameters
     isOver = false;
     isInterrupted = false;
-    totalSpeed = 5;
+    isWinner = false;
     iterCounter = 0;
+    int mapNumber = rand() % mapsCount + 1;
 
-    map = new CMap();
-    level = new CLevel();
+    // generating instances of main game classes
+    wallet = new CWallet(startGold, startDiamonds);
 
-    generator = new CEnemiesGenerator();
-
-    int mapNumber = rand() % 2 + 1;
+    // loading map from the file
     ostringstream path;
     path << "src/templates/maps/map0" << mapNumber;
+    map = new CMap(path.str(), wallet);
 
-    map->LoadMap(path.str());
+    level = new CLevel(iterationsToNextLevel, levelsToWin);
 
+    // creating the shortest route through the map
     CRoute route(*map);
-    map->SetWay(route.GetWay());
+    generator = new CEnemiesGenerator(enemyTypesCount, route.GetWay(), route.GetLength(), map->GetField());
 }
 
 /**
@@ -54,11 +68,19 @@ void Setup()
  */
 void Draw()
 {
+    // field
     map->Print();
+
+    // stats and other info
+    printw("Gold: %d\tDiamonds: %d\n\n", wallet->CurrentGoldStatus(), wallet->CurrentDiamondsStatus());
+
+    printw("Passed enemies: %d\n", map->PassedEnemies());
+    printw("Killed enemies: %d\n", map->KilledEnemies());
     printw("Level: %d\n", level->CurrentLevel());
-    printw("Press A to add a weak tower\n");
-    printw("Press B to add a strong tower\n");
+    printw("Press A to add a weak tower    1000 gold\n");
+    printw("Press B to add a strong tower  1300 gold  1 diamond\n");
     printw("Press X to escape\n");
+    refresh();
 }
 
 /**
@@ -68,30 +90,41 @@ void Input()
 {
     CTower * tower;
     int number;
+
+    // A or B to add tower, X to exit
     switch (getch()) {
         case 'a':
             tower = new CTower('A');
-            printw("Enter number of the position:\n");
 
-            halfdelay(100);
-            number = getch() - 48;
-            halfdelay(1);
-            clear();
+            if (tower->GetPriceGold() <= wallet->CurrentGoldStatus()
+            && tower->GetPriceDiamonds() <= wallet->CurrentGoldStatus()) {
+                printw("Enter number of the position:\n");
+                halfdelay(100);
+                number = getch() - 48;
+                halfdelay(1);
+                clear();
 
-            if (!map->AddTower(tower, number))
+                if (!map->AddTower(tower, number))
+                    delete tower;
+            }
+            else
                 delete tower;
             break;
         case 'b':
             tower = new CTower('B');
 
-            printw("Enter number of the position:\n");
+            if (tower->GetPriceGold() <= wallet->CurrentGoldStatus()
+                && tower->GetPriceDiamonds() <= wallet->CurrentGoldStatus()) {
+                printw("Enter number of the position:\n");
+                halfdelay(100);
+                number = getch() - 48;
+                halfdelay(1);
+                clear();
 
-            halfdelay(100);
-            number = getch() - 48;
-            halfdelay(1);
-            clear();
-
-            if (!map->AddTower(tower, number))
+                if (!map->AddTower(tower, number))
+                    delete tower;
+            }
+            else
                 delete tower;
             break;
         case 'x':
@@ -105,15 +138,18 @@ void Input()
  */
 void Logic()
 {
-    if (iterCounter == totalSpeed) {
+
+    if (iterCounter == iterationsPerTurn) {
         map->MoveEnemies();
         level->Next();
+        isWinner = level->IsWinner();
         generator->GetLevel(level->CurrentLevel());
         auto *enemy = generator->GenerateEnemy();
         map->AddEnemy(enemy);
         isOver = map->IsOver();
         iterCounter = 0;
     }
+
     iterCounter++;
 
     map->MoveBullets();
@@ -123,7 +159,7 @@ void Logic()
 int main() {
     Setup();
 
-    while(!isOver && !isInterrupted)
+    while(!isOver && !isInterrupted && !isWinner)
     {
         Draw();
         Input();
@@ -131,8 +167,12 @@ int main() {
     }
     clear();
 
-    if (!isInterrupted)
-        GameOver();
+    if (!isInterrupted) {
+        if (isWinner)
+            Winner();
+        else
+            GameOver();
+    }
 
     endwin();
 

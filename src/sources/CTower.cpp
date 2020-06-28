@@ -18,12 +18,10 @@ CTower::CTower(char mark) : CGameObject() {
     file >> m_Damage;
     file >> m_Range;
     file >> m_FireRate;
+    file >> m_PriceGold;
+    file >> m_PriceDiamonds;
 
     file.close();
-}
-
-int CTower::GetDamage() const {
-    return m_Damage;
 }
 
 int CTower::GetRange() const {
@@ -35,4 +33,12 @@ CBullet * CTower::Shoot(char ** field, int width, int height, CCoords target) {
     auto * bullet = new CBullet(route.GetWay(), route.GetLength(), m_Damage);
     bullet->SetPosition(m_Pos);
     return bullet;
+}
+
+int CTower::GetPriceGold() const {
+    return m_PriceGold;
+}
+
+int CTower::GetPriceDiamonds() const {
+    return m_PriceDiamonds;
 }
