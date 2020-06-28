@@ -79,8 +79,7 @@ void Draw()
     printw("Level: %d\n", level->CurrentLevel());
     printw("Press A to add a weak tower    1000 gold\n");
     printw("Press B to add a strong tower  1300 gold  1 diamond\n");
-    printw("Press X to escape\n");
-    refresh();
+    printw("Press X to escape\n\n");
 }
 
 /**
@@ -114,7 +113,7 @@ void Input()
             tower = new CTower('B');
 
             if (tower->GetPriceGold() <= wallet->CurrentGoldStatus()
-                && tower->GetPriceDiamonds() <= wallet->CurrentGoldStatus()) {
+                && tower->GetPriceDiamonds() <= wallet->CurrentDiamondsStatus()) {
                 printw("Enter number of the position:\n");
                 halfdelay(100);
                 number = getch() - 48;

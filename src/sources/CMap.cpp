@@ -1,9 +1,7 @@
 #include "../headers/CMap.h"
-#include "../headers/CCoords.h"
 #include <iostream>
 #include <fstream>
 #include <ncurses.h>
-#include <unistd.h>
 
 using namespace std;
 
